@@ -2,501 +2,682 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Asker Munai &amp; Altay Resources — 2026</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<meta name="viewport" content="width=1200">
+<title>Сводка по банковским отчётам принципалов · 2026</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
-body{background:#F5F4F0;color:#2E2E28}
-.wrap{padding:20px;max-width:1300px;margin:0 auto}
-.hero{background:#fff;border:0.5px solid #DDD8CC;border-radius:16px;padding:18px 24px;margin-bottom:16px;display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:14px}
-.hero h1{font-size:17px;font-weight:600;color:#28281E}
-.hero p{font-size:12px;color:#9A9888;margin-top:2px}
-.hrow{display:flex;gap:8px;flex-wrap:wrap}
-.hk{border-radius:10px;padding:10px 16px;text-align:center;min-width:110px}
-.hkv{font-size:20px;font-weight:600;line-height:1.1}
-.hkl{font-size:10px;margin-top:3px;opacity:.8}
-.c-gr{background:#EAF6F0;color:#3A8A68}
-.c-bl{background:#EAF2FA;color:#3A72A0}
-.c-am{background:#EDF4F8;color:#3A7AB8}
-.c-rs{background:#FAEAEA;color:#C05050}
-.c-nt{background:#F4F5F6;color:#5A6678}
-.c-vi{background:#EEF0F8;color:#5060A8}
-.atabs{display:flex;gap:0;margin-bottom:14px;background:#fff;border:0.5px solid #DDD8CC;border-radius:12px;padding:4px;width:fit-content}
-.atab{padding:7px 24px;border-radius:9px;font-size:13px;font-weight:500;color:#7a7a6a;cursor:pointer;border:none;background:transparent;transition:all .15s}
-.atab.on{background:#F4F2EC;color:#28281E;font-weight:600}
-.snav{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
-.snb{background:#fff;border:0.5px solid #DDD8CC;border-radius:8px;padding:6px 16px;font-size:12px;font-weight:500;color:#7a7a6a;cursor:pointer;transition:all .13s}
-.snb.on{background:#28281E;color:#fff;border-color:#28281E}
-.sec{display:none}.sec.on{display:block}
-.r2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.card{background:#fff;border:0.5px solid #DDD8CC;border-radius:13px;padding:16px 18px}
-.ct{font-size:10px;font-weight:600;color:#9A9888;text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px}
-.ch{position:relative;height:220px}
-.chsm{position:relative;height:195px}
-.krow{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
-.kpi{background:#fff;border:0.5px solid #DDD8CC;border-left:3px solid;border-radius:10px;padding:13px 15px}
-.kl{font-size:10px;color:#9A9888;margin-bottom:5px;text-transform:uppercase;letter-spacing:.05em}
-.kv{font-size:22px;font-weight:600;line-height:1.1;color:#28281E}
-.kv small{font-size:11px;font-weight:400;color:#9A9888}
-.ks{font-size:11px;color:#9A9888;margin-top:4px}
-.badge{display:inline-block;padding:3px 9px;border-radius:5px;font-size:11px;font-weight:600;margin-top:6px}
-.b-gr{background:#EAF6F0;color:#3A8A68}
-.b-am{background:#FEF9E8;color:#A08830}
-.b-rs{background:#FAEAEA;color:#C05050}
-.wbrow{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:14px}
-.wb{background:#fff;border:1.5px solid #DDD8CC;border-radius:9px;padding:6px 14px;font-size:12px;font-weight:500;color:#7a7a6a;cursor:pointer;transition:all .13s}
-.wb.on{color:#fff}
-@media(max-width:720px){.r2{grid-template-columns:1fr}.krow{grid-template-columns:1fr 1fr}}
+  :root {
+    --navy-900: #0a1f3d;
+    --navy-800: #12294f;
+    --navy-700: #1c3766;
+    --navy-500: #2f4d82;
+    --navy-300: #6b84ac;
+    --blue-100: #eef1f7;
+    --blue-50: #f6f8fb;
+    --border: #dde2eb;
+    --text: #1a2436;
+    --text-muted: #6b7280;
+    --green: #4a8a6a;
+    --green-bg: #eaf3ee;
+    --red: #b0655c;
+    --red-bg: #f7ece9;
+    --white: #ffffff;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { min-width: 1200px; }
+
+  body {
+    font-family: 'Arial Nova', Arial, sans-serif;
+    background: var(--blue-50);
+    color: var(--text);
+    min-height: 100vh;
+    min-width: 1200px;
+  }
+
+  /* HEADER */
+  .header {
+    background: var(--navy-900);
+    padding: 28px 40px 22px;
+  }
+  .header-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .header-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+  .header-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+  .header-date {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+  }
+
+  /* TABS LEVEL 1 */
+  .tabs-l1 {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .tab-l1 {
+    padding: 15px 26px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    color: var(--text-muted);
+    border-bottom: 3px solid transparent;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .tab-l1:hover { color: var(--navy-800); }
+  .tab-l1.active { color: var(--navy-900); border-bottom-color: var(--navy-900); }
+
+  /* TABS LEVEL 2 */
+  .tabs-l2-wrap {
+    background: var(--blue-100);
+    border-bottom: 1px solid var(--border);
+  }
+  .tabs-l2 {
+    padding: 0 40px;
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .tab-l2 {
+    padding: 11px 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--navy-500);
+    border-bottom: 2px solid transparent;
+    transition: all 0.15s;
+    user-select: none;
+  }
+  .tab-l2:hover { color: var(--navy-900); }
+  .tab-l2.active { color: var(--navy-900); border-bottom-color: var(--navy-700); background: var(--white); }
+
+  /* CONTENT */
+  .content {
+    padding: 28px 40px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .principal-panel { display: none; }
+  .principal-panel.active { display: block; }
+
+  /* OPENING BALANCE */
+  .opening-row {
+    background: var(--navy-900);
+    color: var(--white);
+    border-radius: 6px;
+    padding: 14px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  .opening-label {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.6;
+  }
+  .opening-value {
+    font-size: 18px;
+    font-weight: 700;
+  }
+
+  /* SUMMARY CARDS */
+  .summary-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1.3fr;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 18px 20px;
+  }
+  .card-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .card-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy-900);
+    letter-spacing: -0.02em;
+  }
+  .card-value.positive { color: var(--green); }
+  .card-value.negative { color: var(--red); }
+  .card-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* GENERIC "COMPOSITION BAR" STYLE — used for currency split AND type breakdowns */
+  .comp-bars {
+    margin-top: 9px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  .comp-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+  }
+  .comp-label {
+    width: 150px;
+    flex-shrink: 0;
+    color: var(--text-muted);
+    font-size: 11.5px;
+    font-weight: 600;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .comp-label.short {
+    width: 32px;
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+  }
+  .bar-track {
+    flex: 1;
+    height: 6px;
+    background: var(--blue-100);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .bar-fill { height: 100%; border-radius: 4px; }
+  .bar-fill.aed { background: var(--navy-700); }
+  .bar-fill.usd { background: var(--navy-300); }
+  .bar-fill.inc { background: var(--green); }
+  .bar-fill.out { background: var(--red); }
+  .comp-amount {
+    width: 110px;
+    flex-shrink: 0;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .comp-amount.inc { color: var(--green); }
+  .comp-amount.out { color: var(--red); }
+
+  .type-row {
+    grid-column: span 2;
+  }
+
+  /* TYPE BREAKDOWN ROW — two cards side by side */
+  .types-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+
+  /* COLLAPSIBLE PANELS (operations) */
+  .box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 16px;
+  }
+  .box-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 20px;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    user-select: none;
+  }
+  .box-title-row { display: flex; align-items: center; gap: 10px; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; }
+  .dot-green { background: var(--green); }
+  .dot-red { background: var(--red); }
+  .dot-navy { background: var(--navy-500); }
+  .box-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+  .box-total { font-size: 14px; font-weight: 700; }
+  .box-total.green { color: var(--green); }
+  .box-total.red { color: var(--red); }
+  .chevron { font-size: 11px; color: var(--navy-300); transition: transform 0.2s; margin-left: 12px; }
+  .chevron.open { transform: rotate(180deg); }
+
+  .list-body { display: none; }
+  .list-body.open { display: block; }
+
+  .row-item {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--blue-50);
+  }
+  .row-item:last-child { border-bottom: none; }
+  .row-item:hover { background: var(--blue-50); }
+  .row-date {
+    font-size: 11px;
+    color: var(--text-muted);
+    min-width: 68px;
+    font-variant-numeric: tabular-nums;
+  }
+  .row-desc { flex: 1; font-size: 13px; color: var(--text); }
+  .row-cp { font-weight: 600; color: var(--text); }
+  .row-tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-left: 8px;
+    background: var(--blue-100);
+    color: var(--navy-700);
+  }
+  .row-amount { font-size: 13px; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .row-amount.inc { color: var(--green); }
+  .row-amount.out { color: var(--red); }
+
+  /* SVOD TABLE */
+  .svod-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+  }
+  .svod-table th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+    background: var(--blue-50);
+  }
+  .svod-table th.num, .svod-table td.num { text-align: right; }
+  .svod-table td {
+    padding: 12px 20px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--blue-50);
+  }
+  .svod-table tr:last-child td { border-bottom: none; }
+  .svod-table tr.total-row td {
+    font-weight: 700;
+    background: var(--blue-50);
+    border-top: 1px solid var(--border);
+  }
+  .bank-name { font-weight: 600; color: var(--navy-900); }
+  .num.inc { color: var(--green); font-weight: 600; }
+  .num.out { color: var(--red); font-weight: 600; }
+
+  .footer {
+    text-align: center;
+    padding: 28px 40px 24px;
+    font-size: 11px;
+    color: var(--text-muted);
+  }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<div style="margin-bottom:12px"><img src="data:image/png;base64,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" style="height:36px;mix-blend-mode:multiply;opacity:0.88" alt="WIM"/></div>
-
-<div class="hero">
-  <div><h1 id="htitle">—</h1><p>Данные по: 1 июля 2026 г.</p></div>
-  <div class="hrow" id="hrow"></div>
-</div>
-
-<div class="atabs">
-  <button class="atab on" onclick="setA('am',this)">Asker Munai</button>
-  <button class="atab" onclick="setA('ar',this)">Altay Resources</button>
-</div>
-
-<div class="snav">
-  <button class="snb on" onclick="goS('sum',this)">Сводка по добыче</button>
-  <button class="snb" onclick="goS('wells',this)">По скважинам</button>
-  <button class="snb" onclick="goS('pf',this)">План / Факт</button>
-</div>
-
-<!-- СВОДКА -->
-<div id="s-sum" class="sec on">
-  <div class="krow" id="sum-kpis"></div>
-  <div class="r2">
-    <div class="card"><div class="ct"" id="ct-cSD"></div><div class="ch"><canvas id="cSD"></canvas></div></div>
-    <div class="card"><div class="ct">Месячная добыча — все скважины (тн)</div><div class="ch"><canvas id="cMM"></canvas></div></div>
-  </div>
-  <div class="r2">
-    <div class="card"><div class="ct">Структура добычи с начала года — по скважинам</div><div class="chsm"><canvas id="cPY"></canvas></div></div>
-    <div class="card"><div class="ct"" id="ct-cPA"></div><div class="chsm"><canvas id="cPA"></canvas></div></div>
+<div class="header">
+  <div class="header-top">
+    <div>
+      <div class="header-title">Сводка по банковским отчётам принципалов за 2026 год</div>
+      <div class="header-sub">Whitecliff Group · Конфиденциально</div>
+    </div>
+    <div class="header-date" id="currentDate"></div>
   </div>
 </div>
 
-<!-- ПО СКВАЖИНАМ -->
-<div id="s-wells" class="sec">
-  <div class="wbrow" id="wbtns"></div>
-  <div class="krow" id="w-kpis"></div>
-  <div class="r2">
-    <div class="card"><div class="ct" id="wt1"></div><div class="ch"><canvas id="cWD"></canvas></div></div>
-    <div class="card"><div class="ct">Добыча по месяцам (тн) + обводнённость (%)</div><div class="ch"><canvas id="cWM"></canvas></div></div>
-  </div>
-  <div class="r2">
-    <div class="card"><div class="ct">Доля скважины в добыче актива (с нач. года)</div><div class="chsm"><canvas id="cWP"></canvas></div></div>
-    <div class="card"><div class="ct">Накопленный план vs Факт (тн)</div><div class="chsm"><canvas id="cWC"></canvas></div></div>
-  </div>
-</div>
+<div class="tabs-l1" id="tabsL1"></div>
+<div class="content" id="content"></div>
+<div class="footer">Данные на <span id="footerDate"></span> · внутренний документ, не для внешнего распространения</div>
 
-<!-- ПЛАН / ФАКТ -->
-<div id="s-pf" class="sec">
-  <div class="krow" id="pf-kpis"></div>
-  <div class="r2">
-    <div class="card"><div class="ct">Месячный план vs Факт — янв–апр (тн)</div><div class="ch"><canvas id="cPFm"></canvas></div></div>
-    <div class="card"><div class="ct">Накопленный план vs Факт с начала года (тн)</div><div class="ch"><canvas id="cPFc"></canvas></div></div>
-  </div>
-  <div class="r2">
-    <div class="card"><div class="ct">Среднесуточная добыча по месяцам (тн/сут) — план vs факт</div><div class="ch"><canvas id="cAvgD"></canvas></div></div>
-    <div class="card"><div class="ct">Отклонение факта от плана по месяцам (тн)</div><div class="ch"><canvas id="cDev"></canvas></div></div>
-  </div>
-  <div class="ct" style="margin-bottom:10px">План vs Факт — по скважинам</div>
-  <div id="wpf-wrap"></div>
-</div>
-
-</div>
 <script>
-var AM_FACT = {"431": {"monthly": [{"m": "2026-01", "oil": 206.5, "wat": 1.5}, {"m": "2026-02", "oil": 39.6, "wat": 5.4}, {"m": "2026-03", "oil": 240.5, "wat": 1.0}, {"m": "2026-04", "oil": 232.0, "wat": 1.0}, {"m": "2026-05", "oil": 240.7, "wat": 1.0}, {"m": "2026-06", "oil": 236.7, "wat": 1.0}, {"m": "2026-07", "oil": 7.8, "wat": 1.0}], "daily": [{"d": "2026-01-01", "oil": 7.56, "wat": 2.0}, {"d": "2026-01-02", "oil": 7.472, "wat": 2.0}, {"d": "2026-01-03", "oil": 7.384, "wat": 2.0}, {"d": "2026-01-04", "oil": 7.422, "wat": 1.5}, {"d": "2026-01-05", "oil": 7.51, "wat": 1.5}, {"d": "2026-01-06", "oil": 7.422, "wat": 1.5}, {"d": "2026-01-07", "oil": 7.422, "wat": 1.5}, {"d": "2026-01-08", "oil": 7.245, "wat": 1.5}, {"d": "2026-01-09", "oil": 7.157, "wat": 1.5}, {"d": "2026-01-10", "oil": 7.157, "wat": 1.5}, {"d": "2026-01-11", "oil": 7.068, "wat": 1.5}, {"d": "2026-01-12", "oil": 7.068, "wat": 1.5}, {"d": "2026-01-13", "oil": 7.068, "wat": 1.5}, {"d": "2026-01-14", "oil": 7.068, "wat": 1.5}, {"d": "2026-01-15", "oil": 6.98, "wat": 1.5}, {"d": "2026-01-16", "oil": 6.98, "wat": 1.5}, {"d": "2026-01-17", "oil": 6.892, "wat": 1.5}, {"d": "2026-01-18", "oil": 6.892, "wat": 1.5}, {"d": "2026-01-19", "oil": 6.715, "wat": 1.5}, {"d": "2026-01-20", "oil": 6.627, "wat": 1.5}, {"d": "2026-01-21", "oil": 6.627, "wat": 1.5}, {"d": "2026-01-22", "oil": 6.538, "wat": 1.5}, {"d": "2026-01-23", "oil": 6.362, "wat": 1.5}, {"d": "2026-01-24", "oil": 6.273, "wat": 1.5}, {"d": "2026-01-25", "oil": 6.185, "wat": 1.5}, {"d": "2026-01-26", "oil": 6.096, "wat": 1.5}, {"d": "2026-01-27", "oil": 6.008, "wat": 1.5}, {"d": "2026-01-28", "oil": 5.743, "wat": 1.5}, {"d": "2026-01-29", "oil": 4.948, "wat": 1.5}, {"d": "2026-01-30", "oil": 4.594, "wat": 1.5}, {"d": "2026-01-31", "oil": 4.064, "wat": 1.5}, {"d": "2026-02-01", "oil": 3.269, "wat": 1.5}, {"d": "2026-02-02", "oil": 2.739, "wat": 1.5}, {"d": "2026-02-03", "oil": 2.209, "wat": 1.5}, {"d": "2026-02-04", "oil": 1.59, "wat": 1.5}, {"d": "2026-02-05", "oil": 1.325, "wat": 1.5}, {"d": "2026-02-06", "oil": 1.149, "wat": 1.5}, {"d": "2026-02-07", "oil": 1.149, "wat": 1.5}, {"d": "2026-02-08", "oil": 1.06, "wat": 1.5}, {"d": "2026-02-09", "oil": 0.442, "wat": 1.5}, {"d": "2026-02-21", "oil": 2.183, "wat": 1.5}, {"d": "2026-02-22", "oil": 1.855, "wat": 1.5}, {"d": "2026-02-26", "oil": 3.898, "wat": 56.0}, {"d": "2026-02-27", "oil": 8.127, "wat": 2.1}, {"d": "2026-02-28", "oil": 8.614, "wat": 1.0}, {"d": "2026-03-01", "oil": 7.637, "wat": 1.0}, {"d": "2026-03-02", "oil": 7.637, "wat": 1.0}, {"d": "2026-03-03", "oil": 7.548, "wat": 1.0}, {"d": "2026-03-04", "oil": 7.282, "wat": 1.0}, {"d": "2026-03-05", "oil": 6.98, "wat": 1.0}, {"d": "2026-03-06", "oil": 6.927, "wat": 1.0}, {"d": "2026-03-07", "oil": 7.008, "wat": 1.0}, {"d": "2026-03-08", "oil": 6.888, "wat": 1.0}, {"d": "2026-03-09", "oil": 7.398, "wat": 1.0}, {"d": "2026-03-10", "oil": 7.461, "wat": 1.0}, {"d": "2026-03-11", "oil": 7.825, "wat": 1.0}, {"d": "2026-03-12", "oil": 7.848, "wat": 1.0}, {"d": "2026-03-13", "oil": 7.968, "wat": 1.0}, {"d": "2026-03-14", "oil": 8.105, "wat": 1.0}, {"d": "2026-03-15", "oil": 8.086, "wat": 1.0}, {"d": "2026-03-16", "oil": 8.022, "wat": 1.0}, {"d": "2026-03-17", "oil": 8.097, "wat": 1.0}, {"d": "2026-03-18", "oil": 8.038, "wat": 1.0}, {"d": "2026-03-19", "oil": 8.065, "wat": 1.0}, {"d": "2026-03-20", "oil": 8.025, "wat": 1.0}, {"d": "2026-03-21", "oil": 8.03, "wat": 1.0}, {"d": "2026-03-22", "oil": 8.03, "wat": 1.0}, {"d": "2026-03-23", "oil": 8.081, "wat": 1.0}, {"d": "2026-03-24", "oil": 8.081, "wat": 1.0}, {"d": "2026-03-25", "oil": 7.992, "wat": 1.0}, {"d": "2026-03-26", "oil": 7.992, "wat": 1.0}, {"d": "2026-03-27", "oil": 7.992, "wat": 1.0}, {"d": "2026-03-28", "oil": 7.903, "wat": 1.0}, {"d": "2026-03-29", "oil": 7.903, "wat": 1.0}, {"d": "2026-03-30", "oil": 7.815, "wat": 1.0}, {"d": "2026-03-31", "oil": 7.815, "wat": 1.0}, {"d": "2026-04-01", "oil": 7.815, "wat": 1.0}, {"d": "2026-04-02", "oil": 7.815, "wat": 1.0}, {"d": "2026-04-03", "oil": 7.815, "wat": 1.0}, {"d": "2026-04-04", "oil": 7.815, "wat": 1.0}, {"d": "2026-04-05", "oil": 7.815, "wat": 1.0}, {"d": "2026-04-06", "oil": 7.815, "wat": 1.0}, {"d": "2026-04-07", "oil": 7.815, "wat": 1.0}, {"d": "2026-04-08", "oil": 7.815, "wat": 1.0}, {"d": "2026-04-09", "oil": 7.815, "wat": 1.0}, {"d": "2026-04-10", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-11", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-12", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-13", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-14", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-15", "oil": 7.637, "wat": 1.0}, {"d": "2026-04-16", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-17", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-18", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-19", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-20", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-21", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-22", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-23", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-24", "oil": 7.726, "wat": 1.0}, {"d": "2026-04-25", "oil": 7.637, "wat": 1.0}, {"d": "2026-04-26", "oil": 7.637, "wat": 1.0}, {"d": "2026-04-27", "oil": 7.637, "wat": 1.0}, {"d": "2026-04-28", "oil": 7.637, "wat": 1.0}, {"d": "2026-04-29", "oil": 7.637, "wat": 1.0}, {"d": "2026-04-30", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-01", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-02", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-03", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-04", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-05", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-06", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-07", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-08", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-09", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-10", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-11", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-12", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-13", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-14", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-15", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-16", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-17", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-18", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-19", "oil": 7.637, "wat": 1.0}, {"d": "2026-05-20", "oil": 7.726, "wat": 1.0}, {"d": "2026-05-21", "oil": 8.259, "wat": 1.0}, {"d": "2026-05-22", "oil": 8.259, "wat": 1.0}, {"d": "2026-05-23", "oil": 8.17, "wat": 1.0}, {"d": "2026-05-24", "oil": 8.081, "wat": 1.0}, {"d": "2026-05-25", "oil": 7.992, "wat": 1.0}, {"d": "2026-05-26", "oil": 7.992, "wat": 1.0}, {"d": "2026-05-27", "oil": 7.992, "wat": 1.0}, {"d": "2026-05-28", "oil": 7.992, "wat": 1.0}, {"d": "2026-05-29", "oil": 7.992, "wat": 1.0}, {"d": "2026-05-30", "oil": 7.992, "wat": 1.0}, {"d": "2026-05-31", "oil": 7.104, "wat": 1.0}, {"d": "2026-06-01", "oil": 7.992, "wat": 1.0}, {"d": "2026-06-02", "oil": 7.992, "wat": 1.0}, {"d": "2026-06-03", "oil": 7.548, "wat": 1.0}, {"d": "2026-06-04", "oil": 7.992, "wat": 1.0}, {"d": "2026-06-05", "oil": 7.992, "wat": 1.0}, {"d": "2026-06-06", "oil": 7.992, "wat": 1.0}, {"d": "2026-06-07", "oil": 7.992, "wat": 1.0}, {"d": "2026-06-08", "oil": 7.992, "wat": 1.0}, {"d": "2026-06-09", "oil": 7.992, "wat": 1.0}, {"d": "2026-06-10", "oil": 7.992, "wat": 1.0}, {"d": "2026-06-11", "oil": 7.992, "wat": 1.0}, {"d": "2026-06-12", "oil": 7.548, "wat": 1.0}, {"d": "2026-06-13", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-14", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-15", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-16", "oil": 7.548, "wat": 1.0}, {"d": "2026-06-17", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-18", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-19", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-20", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-21", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-22", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-23", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-24", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-25", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-26", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-27", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-28", "oil": 7.903, "wat": 1.0}, {"d": "2026-06-29", "oil": 7.815, "wat": 1.0}, {"d": "2026-06-30", "oil": 7.815, "wat": 1.0}, {"d": "2026-07-01", "oil": 7.815, "wat": 1.0}]}, "427": {"monthly": [{"m": "2026-01", "oil": 220.1, "wat": 1.5}, {"m": "2026-02", "oil": 193.4, "wat": 1.5}, {"m": "2026-03", "oil": 213.2, "wat": 1.5}, {"m": "2026-04", "oil": 201.6, "wat": 1.5}, {"m": "2026-05", "oil": 204.1, "wat": 1.5}, {"m": "2026-06", "oil": 195.4, "wat": 1.5}, {"m": "2026-07", "oil": 6.5, "wat": 1.5}], "daily": [{"d": "2026-01-01", "oil": 7.053, "wat": 1.5}, {"d": "2026-01-02", "oil": 6.964, "wat": 1.5}, {"d": "2026-01-03", "oil": 7.053, "wat": 1.5}, {"d": "2026-01-04", "oil": 7.053, "wat": 1.5}, {"d": "2026-01-05", "oil": 7.053, "wat": 1.5}, {"d": "2026-01-06", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-07", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-08", "oil": 7.053, "wat": 1.5}, {"d": "2026-01-09", "oil": 7.053, "wat": 1.5}, {"d": "2026-01-10", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-11", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-12", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-13", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-14", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-15", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-16", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-17", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-18", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-19", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-20", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-21", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-22", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-23", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-24", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-25", "oil": 7.141, "wat": 1.5}, {"d": "2026-01-26", "oil": 7.053, "wat": 1.5}, {"d": "2026-01-27", "oil": 7.053, "wat": 1.5}, {"d": "2026-01-28", "oil": 7.053, "wat": 1.5}, {"d": "2026-01-29", "oil": 7.053, "wat": 1.5}, {"d": "2026-01-30", "oil": 7.053, "wat": 1.5}, {"d": "2026-01-31", "oil": 7.053, "wat": 1.5}, {"d": "2026-02-01", "oil": 7.053, "wat": 1.5}, {"d": "2026-02-02", "oil": 6.964, "wat": 1.5}, {"d": "2026-02-03", "oil": 6.964, "wat": 1.5}, {"d": "2026-02-04", "oil": 6.964, "wat": 1.5}, {"d": "2026-02-05", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-06", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-07", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-08", "oil": 6.964, "wat": 1.5}, {"d": "2026-02-09", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-10", "oil": 6.964, "wat": 1.5}, {"d": "2026-02-11", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-12", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-13", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-14", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-15", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-16", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-17", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-18", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-19", "oil": 6.926, "wat": 1.5}, {"d": "2026-02-20", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-21", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-22", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-23", "oil": 6.964, "wat": 1.5}, {"d": "2026-02-24", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-25", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-26", "oil": 6.964, "wat": 1.5}, {"d": "2026-02-27", "oil": 6.876, "wat": 1.5}, {"d": "2026-02-28", "oil": 6.876, "wat": 1.5}, {"d": "2026-03-01", "oil": 6.964, "wat": 1.5}, {"d": "2026-03-02", "oil": 6.929, "wat": 1.5}, {"d": "2026-03-03", "oil": 6.876, "wat": 1.5}, {"d": "2026-03-04", "oil": 6.876, "wat": 1.5}, {"d": "2026-03-05", "oil": 6.876, "wat": 1.5}, {"d": "2026-03-06", "oil": 6.876, "wat": 1.5}, {"d": "2026-03-07", "oil": 6.906, "wat": 1.5}, {"d": "2026-03-08", "oil": 6.89, "wat": 1.5}, {"d": "2026-03-09", "oil": 6.896, "wat": 1.5}, {"d": "2026-03-10", "oil": 6.903, "wat": 1.5}, {"d": "2026-03-11", "oil": 6.885, "wat": 1.5}, {"d": "2026-03-12", "oil": 6.841, "wat": 1.5}, {"d": "2026-03-13", "oil": 6.863, "wat": 1.5}, {"d": "2026-03-14", "oil": 6.878, "wat": 1.5}, {"d": "2026-03-15", "oil": 6.866, "wat": 1.5}, {"d": "2026-03-16", "oil": 6.855, "wat": 1.5}, {"d": "2026-03-17", "oil": 6.872, "wat": 1.5}, {"d": "2026-03-18", "oil": 6.882, "wat": 1.5}, {"d": "2026-03-19", "oil": 6.863, "wat": 1.5}, {"d": "2026-03-20", "oil": 6.874, "wat": 1.5}, {"d": "2026-03-21", "oil": 6.878, "wat": 1.5}, {"d": "2026-03-22", "oil": 6.878, "wat": 1.5}, {"d": "2026-03-23", "oil": 6.878, "wat": 1.5}, {"d": "2026-03-24", "oil": 6.878, "wat": 1.5}, {"d": "2026-03-25", "oil": 6.878, "wat": 1.5}, {"d": "2026-03-26", "oil": 6.878, "wat": 1.5}, {"d": "2026-03-27", "oil": 6.878, "wat": 1.5}, {"d": "2026-03-28", "oil": 6.878, "wat": 1.5}, {"d": "2026-03-29", "oil": 6.878, "wat": 1.5}, {"d": "2026-03-30", "oil": 6.878, "wat": 1.5}, {"d": "2026-03-31", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-01", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-02", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-03", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-04", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-05", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-06", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-07", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-08", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-09", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-10", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-11", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-12", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-13", "oil": 6.788, "wat": 1.5}, {"d": "2026-04-14", "oil": 6.7, "wat": 1.5}, {"d": "2026-04-15", "oil": 6.7, "wat": 1.5}, {"d": "2026-04-16", "oil": 6.7, "wat": 1.5}, {"d": "2026-04-17", "oil": 6.7, "wat": 1.5}, {"d": "2026-04-18", "oil": 6.7, "wat": 1.5}, {"d": "2026-04-19", "oil": 6.7, "wat": 1.5}, {"d": "2026-04-20", "oil": 6.7, "wat": 1.5}, {"d": "2026-04-21", "oil": 6.7, "wat": 1.5}, {"d": "2026-04-22", "oil": 6.7, "wat": 1.5}, {"d": "2026-04-23", "oil": 6.7, "wat": 1.5}, {"d": "2026-04-24", "oil": 6.7, "wat": 1.5}, {"d": "2026-04-25", "oil": 6.612, "wat": 1.5}, {"d": "2026-04-26", "oil": 6.612, "wat": 1.5}, {"d": "2026-04-27", "oil": 6.612, "wat": 1.5}, {"d": "2026-04-28", "oil": 6.612, "wat": 1.5}, {"d": "2026-04-29", "oil": 6.612, "wat": 1.5}, {"d": "2026-04-30", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-01", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-02", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-03", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-04", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-05", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-06", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-07", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-08", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-09", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-10", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-11", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-12", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-13", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-14", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-15", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-16", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-17", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-18", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-19", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-20", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-21", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-22", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-23", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-24", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-25", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-26", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-27", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-28", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-29", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-30", "oil": 6.612, "wat": 1.5}, {"d": "2026-05-31", "oil": 5.73, "wat": 1.5}, {"d": "2026-06-01", "oil": 6.612, "wat": 1.5}, {"d": "2026-06-02", "oil": 6.612, "wat": 1.5}, {"d": "2026-06-03", "oil": 6.171, "wat": 1.5}, {"d": "2026-06-04", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-05", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-06", "oil": 6.612, "wat": 1.5}, {"d": "2026-06-07", "oil": 6.612, "wat": 1.5}, {"d": "2026-06-08", "oil": 6.612, "wat": 1.5}, {"d": "2026-06-09", "oil": 6.612, "wat": 1.5}, {"d": "2026-06-10", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-11", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-12", "oil": 6.259, "wat": 1.5}, {"d": "2026-06-13", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-14", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-15", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-16", "oil": 6.259, "wat": 1.5}, {"d": "2026-06-17", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-18", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-19", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-20", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-21", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-22", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-23", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-24", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-25", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-26", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-27", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-28", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-29", "oil": 6.524, "wat": 1.5}, {"d": "2026-06-30", "oil": 6.524, "wat": 1.5}, {"d": "2026-07-01", "oil": 6.524, "wat": 1.5}]}, "403": {"monthly": [{"m": "2026-01", "oil": 141.9, "wat": 13.0}, {"m": "2026-02", "oil": 126.9, "wat": 13.0}, {"m": "2026-03", "oil": 140.2, "wat": 13.0}, {"m": "2026-04", "oil": 135.1, "wat": 13.0}, {"m": "2026-05", "oil": 122.7, "wat": 15.6}, {"m": "2026-06", "oil": 32.0, "wat": 18.5}, {"m": "2026-07", "oil": 1.6, "wat": 15.0}], "daily": [{"d": "2026-01-01", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-02", "oil": 4.504, "wat": 13.0}, {"d": "2026-01-03", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-04", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-05", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-06", "oil": 4.504, "wat": 13.0}, {"d": "2026-01-07", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-08", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-09", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-10", "oil": 4.504, "wat": 13.0}, {"d": "2026-01-11", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-12", "oil": 4.504, "wat": 13.0}, {"d": "2026-01-13", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-14", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-15", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-16", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-17", "oil": 4.649, "wat": 13.0}, {"d": "2026-01-18", "oil": 4.649, "wat": 13.0}, {"d": "2026-01-19", "oil": 4.649, "wat": 13.0}, {"d": "2026-01-20", "oil": 4.649, "wat": 13.0}, {"d": "2026-01-21", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-22", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-23", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-24", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-25", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-26", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-27", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-28", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-29", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-30", "oil": 4.577, "wat": 13.0}, {"d": "2026-01-31", "oil": 4.577, "wat": 13.0}, {"d": "2026-02-01", "oil": 4.649, "wat": 13.0}, {"d": "2026-02-02", "oil": 4.577, "wat": 13.0}, {"d": "2026-02-03", "oil": 4.577, "wat": 13.0}, {"d": "2026-02-04", "oil": 4.577, "wat": 13.0}, {"d": "2026-02-05", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-06", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-07", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-08", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-09", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-10", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-11", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-12", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-13", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-14", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-15", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-16", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-17", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-18", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-19", "oil": 4.551, "wat": 13.0}, {"d": "2026-02-20", "oil": 4.551, "wat": 13.0}, {"d": "2026-02-21", "oil": 4.551, "wat": 13.0}, {"d": "2026-02-22", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-23", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-24", "oil": 4.504, "wat": 13.0}, {"d": "2026-02-25", "oil": 4.577, "wat": 13.0}, {"d": "2026-02-26", "oil": 4.577, "wat": 13.0}, {"d": "2026-02-27", "oil": 4.577, "wat": 13.0}, {"d": "2026-02-28", "oil": 4.577, "wat": 13.0}, {"d": "2026-03-01", "oil": 4.577, "wat": 13.0}, {"d": "2026-03-02", "oil": 4.577, "wat": 13.0}, {"d": "2026-03-03", "oil": 4.504, "wat": 13.0}, {"d": "2026-03-04", "oil": 4.504, "wat": 13.0}, {"d": "2026-03-05", "oil": 4.504, "wat": 13.0}, {"d": "2026-03-06", "oil": 4.504, "wat": 13.0}, {"d": "2026-03-07", "oil": 4.545, "wat": 13.0}, {"d": "2026-03-08", "oil": 4.519, "wat": 13.0}, {"d": "2026-03-09", "oil": 4.531, "wat": 13.0}, {"d": "2026-03-10", "oil": 4.539, "wat": 13.0}, {"d": "2026-03-11", "oil": 4.527, "wat": 13.0}, {"d": "2026-03-12", "oil": 4.535, "wat": 13.0}, {"d": "2026-03-13", "oil": 4.52, "wat": 13.0}, {"d": "2026-03-14", "oil": 4.537, "wat": 13.0}, {"d": "2026-03-15", "oil": 4.529, "wat": 13.0}, {"d": "2026-03-16", "oil": 4.505, "wat": 13.0}, {"d": "2026-03-17", "oil": 4.538, "wat": 13.0}, {"d": "2026-03-18", "oil": 4.522, "wat": 13.0}, {"d": "2026-03-19", "oil": 4.532, "wat": 13.0}, {"d": "2026-03-20", "oil": 4.537, "wat": 13.0}, {"d": "2026-03-21", "oil": 4.533, "wat": 13.0}, {"d": "2026-03-22", "oil": 4.577, "wat": 13.0}, {"d": "2026-03-23", "oil": 4.577, "wat": 13.0}, {"d": "2026-03-24", "oil": 4.504, "wat": 13.0}, {"d": "2026-03-25", "oil": 4.504, "wat": 13.0}, {"d": "2026-03-26", "oil": 4.504, "wat": 13.0}, {"d": "2026-03-27", "oil": 4.504, "wat": 13.0}, {"d": "2026-03-28", "oil": 4.504, "wat": 13.0}, {"d": "2026-03-29", "oil": 4.504, "wat": 13.0}, {"d": "2026-03-30", "oil": 4.431, "wat": 13.0}, {"d": "2026-03-31", "oil": 4.431, "wat": 13.0}, {"d": "2026-04-01", "oil": 4.431, "wat": 13.0}, {"d": "2026-04-02", "oil": 4.431, "wat": 13.0}, {"d": "2026-04-03", "oil": 4.359, "wat": 13.0}, {"d": "2026-04-04", "oil": 4.359, "wat": 13.0}, {"d": "2026-04-05", "oil": 4.359, "wat": 13.0}, {"d": "2026-04-06", "oil": 4.068, "wat": 13.0}, {"d": "2026-04-07", "oil": 4.359, "wat": 13.0}, {"d": "2026-04-08", "oil": 4.431, "wat": 13.0}, {"d": "2026-04-09", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-10", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-11", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-12", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-13", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-14", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-15", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-16", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-17", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-18", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-19", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-20", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-21", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-22", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-23", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-24", "oil": 4.504, "wat": 13.0}, {"d": "2026-04-25", "oil": 4.649, "wat": 13.0}, {"d": "2026-04-26", "oil": 4.722, "wat": 13.0}, {"d": "2026-04-27", "oil": 4.722, "wat": 13.0}, {"d": "2026-04-28", "oil": 4.722, "wat": 13.0}, {"d": "2026-04-29", "oil": 4.722, "wat": 13.0}, {"d": "2026-04-30", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-01", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-02", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-03", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-04", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-05", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-06", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-07", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-08", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-09", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-10", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-11", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-12", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-13", "oil": 4.722, "wat": 13.0}, {"d": "2026-05-14", "oil": 4.577, "wat": 13.0}, {"d": "2026-05-15", "oil": 4.577, "wat": 13.0}, {"d": "2026-05-16", "oil": 4.577, "wat": 13.0}, {"d": "2026-05-17", "oil": 4.431, "wat": 13.0}, {"d": "2026-05-18", "oil": 4.359, "wat": 13.0}, {"d": "2026-05-19", "oil": 4.359, "wat": 13.0}, {"d": "2026-05-20", "oil": 4.359, "wat": 13.0}, {"d": "2026-05-21", "oil": 4.359, "wat": 13.0}, {"d": "2026-05-22", "oil": 4.286, "wat": 13.0}, {"d": "2026-05-23", "oil": 4.286, "wat": 13.0}, {"d": "2026-05-24", "oil": 4.359, "wat": 13.0}, {"d": "2026-05-25", "oil": 4.359, "wat": 13.0}, {"d": "2026-05-26", "oil": 1.889, "wat": 13.0}, {"d": "2026-05-29", "oil": 0.835, "wat": 50.0}, {"d": "2026-05-30", "oil": 2.355, "wat": 40.0}, {"d": "2026-05-31", "oil": 3.382, "wat": 25.0}, {"d": "2026-06-01", "oil": 3.206, "wat": 20.0}, {"d": "2026-06-02", "oil": 3.54, "wat": 20.0}, {"d": "2026-06-03", "oil": 3.34, "wat": 20.0}, {"d": "2026-06-04", "oil": 3.407, "wat": 20.0}, {"d": "2026-06-05", "oil": 3.34, "wat": 20.0}, {"d": "2026-06-06", "oil": 3.14, "wat": 20.0}, {"d": "2026-06-07", "oil": 3.15, "wat": 18.0}, {"d": "2026-06-08", "oil": 3.081, "wat": 18.0}, {"d": "2026-06-09", "oil": 3.156, "wat": 16.0}, {"d": "2026-06-10", "oil": 1.122, "wat": 16.0}, {"d": "2026-06-30", "oil": 1.482, "wat": 15.0}, {"d": "2026-07-01", "oil": 1.552, "wat": 15.0}]}, "408": {"monthly": [{"m": "2026-01", "oil": 164.8, "wat": 5.0}, {"m": "2026-02", "oil": 148.8, "wat": 5.0}, {"m": "2026-03", "oil": 163.1, "wat": 5.0}, {"m": "2026-04", "oil": 153.4, "wat": 5.0}, {"m": "2026-05", "oil": 157.1, "wat": 5.0}, {"m": "2026-06", "oil": 152.1, "wat": 5.0}, {"m": "2026-07", "oil": 5.1, "wat": 5.0}], "daily": [{"d": "2026-01-01", "oil": 5.175, "wat": 5.0}, {"d": "2026-01-02", "oil": 5.09, "wat": 5.0}, {"d": "2026-01-03", "oil": 5.175, "wat": 5.0}, {"d": "2026-01-04", "oil": 5.175, "wat": 5.0}, {"d": "2026-01-05", "oil": 5.175, "wat": 5.0}, {"d": "2026-01-06", "oil": 5.175, "wat": 5.0}, {"d": "2026-01-07", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-08", "oil": 5.429, "wat": 5.0}, {"d": "2026-01-09", "oil": 5.429, "wat": 5.0}, {"d": "2026-01-10", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-11", "oil": 5.429, "wat": 5.0}, {"d": "2026-01-12", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-13", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-14", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-15", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-16", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-17", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-18", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-19", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-20", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-21", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-22", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-23", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-24", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-25", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-26", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-27", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-28", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-29", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-30", "oil": 5.345, "wat": 5.0}, {"d": "2026-01-31", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-01", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-02", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-03", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-04", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-05", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-06", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-07", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-08", "oil": 5.26, "wat": 5.0}, {"d": "2026-02-09", "oil": 5.26, "wat": 5.0}, {"d": "2026-02-10", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-11", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-12", "oil": 5.26, "wat": 5.0}, {"d": "2026-02-13", "oil": 5.26, "wat": 5.0}, {"d": "2026-02-14", "oil": 5.26, "wat": 5.0}, {"d": "2026-02-15", "oil": 5.26, "wat": 5.0}, {"d": "2026-02-16", "oil": 5.26, "wat": 5.0}, {"d": "2026-02-17", "oil": 5.26, "wat": 5.0}, {"d": "2026-02-18", "oil": 5.26, "wat": 5.0}, {"d": "2026-02-19", "oil": 5.26, "wat": 5.0}, {"d": "2026-02-20", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-21", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-22", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-23", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-24", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-25", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-26", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-27", "oil": 5.345, "wat": 5.0}, {"d": "2026-02-28", "oil": 5.345, "wat": 5.0}, {"d": "2026-03-01", "oil": 5.345, "wat": 5.0}, {"d": "2026-03-02", "oil": 5.26, "wat": 5.0}, {"d": "2026-03-03", "oil": 5.26, "wat": 5.0}, {"d": "2026-03-04", "oil": 5.26, "wat": 5.0}, {"d": "2026-03-05", "oil": 5.26, "wat": 5.0}, {"d": "2026-03-06", "oil": 5.26, "wat": 5.0}, {"d": "2026-03-07", "oil": 5.261, "wat": 5.0}, {"d": "2026-03-08", "oil": 5.272, "wat": 5.0}, {"d": "2026-03-09", "oil": 5.295, "wat": 5.0}, {"d": "2026-03-10", "oil": 5.282, "wat": 5.0}, {"d": "2026-03-11", "oil": 5.275, "wat": 5.0}, {"d": "2026-03-12", "oil": 5.241, "wat": 5.0}, {"d": "2026-03-13", "oil": 5.289, "wat": 5.0}, {"d": "2026-03-14", "oil": 5.269, "wat": 5.0}, {"d": "2026-03-15", "oil": 5.253, "wat": 5.0}, {"d": "2026-03-16", "oil": 5.265, "wat": 5.0}, {"d": "2026-03-17", "oil": 5.275, "wat": 5.0}, {"d": "2026-03-18", "oil": 5.241, "wat": 5.0}, {"d": "2026-03-19", "oil": 5.263, "wat": 5.0}, {"d": "2026-03-20", "oil": 5.269, "wat": 5.0}, {"d": "2026-03-21", "oil": 5.25, "wat": 5.0}, {"d": "2026-03-22", "oil": 5.25, "wat": 5.0}, {"d": "2026-03-23", "oil": 5.25, "wat": 5.0}, {"d": "2026-03-24", "oil": 5.25, "wat": 5.0}, {"d": "2026-03-25", "oil": 5.25, "wat": 5.0}, {"d": "2026-03-26", "oil": 5.25, "wat": 5.0}, {"d": "2026-03-27", "oil": 5.25, "wat": 5.0}, {"d": "2026-03-28", "oil": 5.25, "wat": 5.0}, {"d": "2026-03-29", "oil": 5.25, "wat": 5.0}, {"d": "2026-03-30", "oil": 5.25, "wat": 5.0}, {"d": "2026-03-31", "oil": 5.25, "wat": 5.0}, {"d": "2026-04-01", "oil": 5.25, "wat": 5.0}, {"d": "2026-04-02", "oil": 5.25, "wat": 5.0}, {"d": "2026-04-03", "oil": 5.25, "wat": 5.0}, {"d": "2026-04-04", "oil": 5.175, "wat": 5.0}, {"d": "2026-04-05", "oil": 5.175, "wat": 5.0}, {"d": "2026-04-06", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-07", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-08", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-09", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-10", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-11", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-12", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-13", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-14", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-15", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-16", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-17", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-18", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-19", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-20", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-21", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-22", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-23", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-24", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-25", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-26", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-27", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-28", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-29", "oil": 5.09, "wat": 5.0}, {"d": "2026-04-30", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-01", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-02", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-03", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-04", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-05", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-06", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-07", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-08", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-09", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-10", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-11", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-12", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-13", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-14", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-15", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-16", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-17", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-18", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-19", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-20", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-21", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-22", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-23", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-24", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-25", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-26", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-27", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-28", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-29", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-30", "oil": 5.09, "wat": 5.0}, {"d": "2026-05-31", "oil": 4.411, "wat": 5.0}, {"d": "2026-06-01", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-02", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-03", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-04", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-05", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-06", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-07", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-08", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-09", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-10", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-11", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-12", "oil": 4.836, "wat": 5.0}, {"d": "2026-06-13", "oil": 5.005, "wat": 5.0}, {"d": "2026-06-14", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-15", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-16", "oil": 4.836, "wat": 5.0}, {"d": "2026-06-17", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-18", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-19", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-20", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-21", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-22", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-23", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-24", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-25", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-26", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-27", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-28", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-29", "oil": 5.09, "wat": 5.0}, {"d": "2026-06-30", "oil": 5.09, "wat": 5.0}, {"d": "2026-07-01", "oil": 5.09, "wat": 5.0}]}, "Т1": {"monthly": [{"m": "2026-01", "oil": 97.6, "wat": 7.0}, {"m": "2026-02", "oil": 87.9, "wat": 7.0}, {"m": "2026-03", "oil": 97.1, "wat": 7.0}, {"m": "2026-04", "oil": 93.9, "wat": 7.0}, {"m": "2026-05", "oil": 96.5, "wat": 7.0}, {"m": "2026-06", "oil": 90.4, "wat": 7.0}, {"m": "2026-07", "oil": 3.0, "wat": 7.0}], "daily": [{"d": "2026-01-01", "oil": 3.21, "wat": 7.0}, {"d": "2026-01-02", "oil": 3.21, "wat": 7.0}, {"d": "2026-01-03", "oil": 3.21, "wat": 7.0}, {"d": "2026-01-04", "oil": 3.21, "wat": 7.0}, {"d": "2026-01-05", "oil": 3.21, "wat": 7.0}, {"d": "2026-01-06", "oil": 3.21, "wat": 7.0}, {"d": "2026-01-07", "oil": 3.045, "wat": 7.0}, {"d": "2026-01-08", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-09", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-10", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-11", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-12", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-13", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-14", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-15", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-16", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-17", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-18", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-19", "oil": 3.21, "wat": 7.0}, {"d": "2026-01-20", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-21", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-22", "oil": 3.21, "wat": 7.0}, {"d": "2026-01-23", "oil": 3.21, "wat": 7.0}, {"d": "2026-01-24", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-25", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-26", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-27", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-28", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-29", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-30", "oil": 3.128, "wat": 7.0}, {"d": "2026-01-31", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-01", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-02", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-03", "oil": 3.21, "wat": 7.0}, {"d": "2026-02-04", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-05", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-06", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-07", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-08", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-09", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-10", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-11", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-12", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-13", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-14", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-15", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-16", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-17", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-18", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-19", "oil": 3.149, "wat": 7.0}, {"d": "2026-02-20", "oil": 3.149, "wat": 7.0}, {"d": "2026-02-21", "oil": 3.149, "wat": 7.0}, {"d": "2026-02-22", "oil": 3.149, "wat": 7.0}, {"d": "2026-02-23", "oil": 3.149, "wat": 7.0}, {"d": "2026-02-24", "oil": 3.149, "wat": 7.0}, {"d": "2026-02-25", "oil": 3.21, "wat": 7.0}, {"d": "2026-02-26", "oil": 3.21, "wat": 7.0}, {"d": "2026-02-27", "oil": 3.128, "wat": 7.0}, {"d": "2026-02-28", "oil": 3.128, "wat": 7.0}, {"d": "2026-03-01", "oil": 3.128, "wat": 7.0}, {"d": "2026-03-02", "oil": 3.128, "wat": 7.0}, {"d": "2026-03-03", "oil": 3.128, "wat": 7.0}, {"d": "2026-03-04", "oil": 3.128, "wat": 7.0}, {"d": "2026-03-05", "oil": 3.128, "wat": 7.0}, {"d": "2026-03-06", "oil": 3.128, "wat": 7.0}, {"d": "2026-03-07", "oil": 3.137, "wat": 7.0}, {"d": "2026-03-08", "oil": 3.129, "wat": 7.0}, {"d": "2026-03-09", "oil": 3.142, "wat": 7.0}, {"d": "2026-03-10", "oil": 3.136, "wat": 7.0}, {"d": "2026-03-11", "oil": 3.14, "wat": 7.0}, {"d": "2026-03-12", "oil": 3.116, "wat": 7.0}, {"d": "2026-03-13", "oil": 3.121, "wat": 7.0}, {"d": "2026-03-14", "oil": 3.142, "wat": 7.0}, {"d": "2026-03-15", "oil": 3.131, "wat": 7.0}, {"d": "2026-03-16", "oil": 3.137, "wat": 7.0}, {"d": "2026-03-17", "oil": 3.118, "wat": 7.0}, {"d": "2026-03-18", "oil": 3.14, "wat": 7.0}, {"d": "2026-03-19", "oil": 3.133, "wat": 7.0}, {"d": "2026-03-20", "oil": 3.123, "wat": 7.0}, {"d": "2026-03-21", "oil": 3.136, "wat": 7.0}, {"d": "2026-03-22", "oil": 3.136, "wat": 7.0}, {"d": "2026-03-23", "oil": 3.136, "wat": 7.0}, {"d": "2026-03-24", "oil": 3.136, "wat": 7.0}, {"d": "2026-03-25", "oil": 3.136, "wat": 7.0}, {"d": "2026-03-26", "oil": 3.136, "wat": 7.0}, {"d": "2026-03-27", "oil": 3.136, "wat": 7.0}, {"d": "2026-03-28", "oil": 3.136, "wat": 7.0}, {"d": "2026-03-29", "oil": 3.136, "wat": 7.0}, {"d": "2026-03-30", "oil": 3.136, "wat": 7.0}, {"d": "2026-03-31", "oil": 3.136, "wat": 7.0}, {"d": "2026-04-01", "oil": 3.136, "wat": 7.0}, {"d": "2026-04-02", "oil": 3.136, "wat": 7.0}, {"d": "2026-04-03", "oil": 3.136, "wat": 7.0}, {"d": "2026-04-04", "oil": 3.136, "wat": 7.0}, {"d": "2026-04-05", "oil": 3.136, "wat": 7.0}, {"d": "2026-04-06", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-07", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-08", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-09", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-10", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-11", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-12", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-13", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-14", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-15", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-16", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-17", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-18", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-19", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-20", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-21", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-22", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-23", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-24", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-25", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-26", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-27", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-28", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-29", "oil": 3.128, "wat": 7.0}, {"d": "2026-04-30", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-01", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-02", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-03", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-04", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-05", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-06", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-07", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-08", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-09", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-10", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-11", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-12", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-13", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-14", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-15", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-16", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-17", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-18", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-19", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-20", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-21", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-22", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-23", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-24", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-25", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-26", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-27", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-28", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-29", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-30", "oil": 3.128, "wat": 7.0}, {"d": "2026-05-31", "oil": 2.716, "wat": 7.0}, {"d": "2026-06-01", "oil": 3.128, "wat": 7.0}, {"d": "2026-06-02", "oil": 3.128, "wat": 7.0}, {"d": "2026-06-03", "oil": 3.128, "wat": 7.0}, {"d": "2026-06-04", "oil": 3.128, "wat": 7.0}, {"d": "2026-06-05", "oil": 3.128, "wat": 7.0}, {"d": "2026-06-06", "oil": 3.128, "wat": 7.0}, {"d": "2026-06-07", "oil": 3.128, "wat": 7.0}, {"d": "2026-06-08", "oil": 3.128, "wat": 7.0}, {"d": "2026-06-09", "oil": 3.128, "wat": 7.0}, {"d": "2026-06-10", "oil": 3.128, "wat": 7.0}, {"d": "2026-06-11", "oil": 3.128, "wat": 7.0}, {"d": "2026-06-12", "oil": 2.798, "wat": 7.0}, {"d": "2026-06-13", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-14", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-15", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-16", "oil": 2.798, "wat": 7.0}, {"d": "2026-06-17", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-18", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-19", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-20", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-21", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-22", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-23", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-24", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-25", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-26", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-27", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-28", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-29", "oil": 2.963, "wat": 7.0}, {"d": "2026-06-30", "oil": 2.963, "wat": 7.0}, {"d": "2026-07-01", "oil": 2.963, "wat": 7.0}]}, "Т7": {"monthly": [{"m": "2026-01", "oil": 87.2, "wat": 48.2}, {"m": "2026-02", "oil": 52.2, "wat": 50.0}, {"m": "2026-03", "oil": 91.1, "wat": 53.3}, {"m": "2026-04", "oil": 85.6, "wat": 52.0}, {"m": "2026-05", "oil": 86.0, "wat": 52.4}, {"m": "2026-06", "oil": 78.5, "wat": 55.0}, {"m": "2026-07", "oil": 2.6, "wat": 55.0}], "daily": [{"d": "2026-01-01", "oil": 2.761, "wat": 48.0}, {"d": "2026-01-02", "oil": 2.761, "wat": 48.0}, {"d": "2026-01-03", "oil": 2.761, "wat": 48.0}, {"d": "2026-01-04", "oil": 2.761, "wat": 48.0}, {"d": "2026-01-05", "oil": 2.761, "wat": 48.0}, {"d": "2026-01-06", "oil": 2.761, "wat": 48.0}, {"d": "2026-01-07", "oil": 2.807, "wat": 48.0}, {"d": "2026-01-08", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-09", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-10", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-11", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-12", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-13", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-14", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-15", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-16", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-17", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-18", "oil": 2.899, "wat": 48.0}, {"d": "2026-01-19", "oil": 2.899, "wat": 48.0}, {"d": "2026-01-20", "oil": 2.899, "wat": 48.0}, {"d": "2026-01-21", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-22", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-23", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-24", "oil": 2.853, "wat": 48.0}, {"d": "2026-01-25", "oil": 2.807, "wat": 48.0}, {"d": "2026-01-26", "oil": 2.807, "wat": 48.0}, {"d": "2026-01-27", "oil": 2.807, "wat": 48.0}, {"d": "2026-01-28", "oil": 2.761, "wat": 48.0}, {"d": "2026-01-29", "oil": 2.655, "wat": 50.0}, {"d": "2026-01-30", "oil": 2.655, "wat": 50.0}, {"d": "2026-01-31", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-01", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-02", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-03", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-04", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-05", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-06", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-07", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-08", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-09", "oil": 2.434, "wat": 50.0}, {"d": "2026-02-10", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-11", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-12", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-13", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-14", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-15", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-16", "oil": 2.655, "wat": 50.0}, {"d": "2026-02-17", "oil": 2.567, "wat": 50.0}, {"d": "2026-02-18", "oil": 2.39, "wat": 50.0}, {"d": "2026-02-19", "oil": 1.551, "wat": 50.0}, {"d": "2026-02-20", "oil": 1.195, "wat": 50.0}, {"d": "2026-02-21", "oil": 1.018, "wat": 50.0}, {"d": "2026-02-22", "oil": 0.506, "wat": 50.0}, {"d": "2026-02-23", "oil": 0.381, "wat": 50.0}, {"d": "2026-02-24", "oil": 0.354, "wat": 50.0}, {"d": "2026-03-03", "oil": 2.413, "wat": 71.0}, {"d": "2026-03-04", "oil": 3.036, "wat": 62.3}, {"d": "2026-03-05", "oil": 3.193, "wat": 59.0}, {"d": "2026-03-06", "oil": 3.568, "wat": 54.7}, {"d": "2026-03-07", "oil": 3.603, "wat": 52.0}, {"d": "2026-03-08", "oil": 3.419, "wat": 52.0}, {"d": "2026-03-09", "oil": 3.319, "wat": 52.0}, {"d": "2026-03-10", "oil": 3.209, "wat": 52.0}, {"d": "2026-03-11", "oil": 3.214, "wat": 52.0}, {"d": "2026-03-12", "oil": 3.149, "wat": 52.0}, {"d": "2026-03-13", "oil": 3.14, "wat": 52.0}, {"d": "2026-03-14", "oil": 3.157, "wat": 52.0}, {"d": "2026-03-15", "oil": 3.148, "wat": 52.0}, {"d": "2026-03-16", "oil": 3.143, "wat": 52.0}, {"d": "2026-03-17", "oil": 3.154, "wat": 52.0}, {"d": "2026-03-18", "oil": 3.149, "wat": 52.0}, {"d": "2026-03-19", "oil": 3.117, "wat": 52.0}, {"d": "2026-03-20", "oil": 3.145, "wat": 52.0}, {"d": "2026-03-21", "oil": 3.132, "wat": 52.0}, {"d": "2026-03-22", "oil": 3.132, "wat": 52.0}, {"d": "2026-03-23", "oil": 3.132, "wat": 52.0}, {"d": "2026-03-24", "oil": 3.101, "wat": 52.0}, {"d": "2026-03-25", "oil": 3.101, "wat": 52.0}, {"d": "2026-03-26", "oil": 3.101, "wat": 52.0}, {"d": "2026-03-27", "oil": 3.059, "wat": 52.0}, {"d": "2026-03-28", "oil": 3.016, "wat": 52.0}, {"d": "2026-03-29", "oil": 3.016, "wat": 52.0}, {"d": "2026-03-30", "oil": 3.016, "wat": 52.0}, {"d": "2026-03-31", "oil": 2.974, "wat": 52.0}, {"d": "2026-04-01", "oil": 2.974, "wat": 52.0}, {"d": "2026-04-02", "oil": 2.974, "wat": 52.0}, {"d": "2026-04-03", "oil": 2.931, "wat": 52.0}, {"d": "2026-04-04", "oil": 2.931, "wat": 52.0}, {"d": "2026-04-05", "oil": 2.889, "wat": 52.0}, {"d": "2026-04-06", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-07", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-08", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-09", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-10", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-11", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-12", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-13", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-14", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-15", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-16", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-17", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-18", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-19", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-20", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-21", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-22", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-23", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-24", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-25", "oil": 2.846, "wat": 52.0}, {"d": "2026-04-26", "oil": 2.804, "wat": 52.0}, {"d": "2026-04-27", "oil": 2.804, "wat": 52.0}, {"d": "2026-04-28", "oil": 2.804, "wat": 52.0}, {"d": "2026-04-29", "oil": 2.804, "wat": 52.0}, {"d": "2026-04-30", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-01", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-02", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-03", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-04", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-05", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-06", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-07", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-08", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-09", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-10", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-11", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-12", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-13", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-14", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-15", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-16", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-17", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-18", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-19", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-20", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-21", "oil": 2.846, "wat": 52.0}, {"d": "2026-05-22", "oil": 2.846, "wat": 52.0}, {"d": "2026-05-23", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-24", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-25", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-26", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-27", "oil": 2.804, "wat": 52.0}, {"d": "2026-05-28", "oil": 2.628, "wat": 55.0}, {"d": "2026-05-29", "oil": 2.628, "wat": 55.0}, {"d": "2026-05-30", "oil": 2.628, "wat": 55.0}, {"d": "2026-05-31", "oil": 2.31, "wat": 55.0}, {"d": "2026-06-01", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-02", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-03", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-04", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-05", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-06", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-07", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-08", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-09", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-10", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-11", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-12", "oil": 2.469, "wat": 55.0}, {"d": "2026-06-13", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-14", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-15", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-16", "oil": 2.469, "wat": 55.0}, {"d": "2026-06-17", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-18", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-19", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-20", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-21", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-22", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-23", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-24", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-25", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-26", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-27", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-28", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-29", "oil": 2.628, "wat": 55.0}, {"d": "2026-06-30", "oil": 2.628, "wat": 55.0}, {"d": "2026-07-01", "oil": 2.628, "wat": 55.0}]}};
-var AR_FACT = {"200": {"monthly": [{"m": "2026-01", "oil": 2106.3, "wat": 7.2}, {"m": "2026-02", "oil": 1870.8, "wat": 7.2}, {"m": "2026-03", "oil": 2181.7, "wat": 6.8}, {"m": "2026-04", "oil": 2210.8, "wat": 7.0}, {"m": "2026-05", "oil": 2227.5, "wat": 6.9}, {"m": "2026-06", "oil": 1895.3, "wat": 8.2}, {"m": "2026-07", "oil": 73.4, "wat": 8.5}], "daily": [{"d": "2026-01-01", "oil": 67.3, "wat": 6.5}, {"d": "2026-01-02", "oil": 66.5, "wat": 7.3}, {"d": "2026-01-03", "oil": 67.5, "wat": 7.5}, {"d": "2026-01-04", "oil": 66.8, "wat": 8.0}, {"d": "2026-01-05", "oil": 66.0, "wat": 7.5}, {"d": "2026-01-06", "oil": 66.0, "wat": 7.5}, {"d": "2026-01-07", "oil": 67.7, "wat": 7.5}, {"d": "2026-01-08", "oil": 66.4, "wat": 7.5}, {"d": "2026-01-09", "oil": 67.8, "wat": 7.5}, {"d": "2026-01-10", "oil": 69.5, "wat": 7.5}, {"d": "2026-01-11", "oil": 67.4, "wat": 7.5}, {"d": "2026-01-12", "oil": 68.0, "wat": 7.5}, {"d": "2026-01-13", "oil": 67.7, "wat": 7.5}, {"d": "2026-01-14", "oil": 67.6, "wat": 7.5}, {"d": "2026-01-15", "oil": 67.9, "wat": 7.5}, {"d": "2026-01-16", "oil": 67.7, "wat": 7.5}, {"d": "2026-01-17", "oil": 69.3, "wat": 7.0}, {"d": "2026-01-18", "oil": 68.5, "wat": 7.0}, {"d": "2026-01-19", "oil": 69.5, "wat": 7.0}, {"d": "2026-01-20", "oil": 68.4, "wat": 7.0}, {"d": "2026-01-21", "oil": 67.8, "wat": 7.0}, {"d": "2026-01-22", "oil": 67.4, "wat": 7.0}, {"d": "2026-01-23", "oil": 68.1, "wat": 6.5}, {"d": "2026-01-24", "oil": 68.8, "wat": 6.5}, {"d": "2026-01-25", "oil": 69.1, "wat": 6.5}, {"d": "2026-01-26", "oil": 68.7, "wat": 6.5}, {"d": "2026-01-27", "oil": 68.2, "wat": 6.5}, {"d": "2026-01-28", "oil": 67.5, "wat": 6.5}, {"d": "2026-01-29", "oil": 72.5, "wat": 6.5}, {"d": "2026-01-30", "oil": 69.2, "wat": 7.5}, {"d": "2026-01-31", "oil": 65.5, "wat": 8.0}, {"d": "2026-02-01", "oil": 65.2, "wat": 8.0}, {"d": "2026-02-02", "oil": 66.6, "wat": 8.0}, {"d": "2026-02-03", "oil": 65.3, "wat": 8.0}, {"d": "2026-02-04", "oil": 66.1, "wat": 8.0}, {"d": "2026-02-05", "oil": 64.5, "wat": 7.5}, {"d": "2026-02-06", "oil": 62.0, "wat": 7.5}, {"d": "2026-02-07", "oil": 63.9, "wat": 7.5}, {"d": "2026-02-08", "oil": 64.2, "wat": 7.5}, {"d": "2026-02-09", "oil": 64.4, "wat": 7.0}, {"d": "2026-02-10", "oil": 67.0, "wat": 7.0}, {"d": "2026-02-11", "oil": 64.9, "wat": 7.5}, {"d": "2026-02-12", "oil": 65.5, "wat": 7.5}, {"d": "2026-02-13", "oil": 66.7, "wat": 7.5}, {"d": "2026-02-14", "oil": 68.1, "wat": 7.0}, {"d": "2026-02-15", "oil": 67.5, "wat": 7.0}, {"d": "2026-02-16", "oil": 67.6, "wat": 6.5}, {"d": "2026-02-17", "oil": 68.4, "wat": 6.0}, {"d": "2026-02-18", "oil": 67.6, "wat": 6.0}, {"d": "2026-02-19", "oil": 68.5, "wat": 7.0}, {"d": "2026-02-20", "oil": 67.3, "wat": 7.0}, {"d": "2026-02-21", "oil": 68.4, "wat": 7.0}, {"d": "2026-02-22", "oil": 68.1, "wat": 7.0}, {"d": "2026-02-23", "oil": 67.3, "wat": 7.0}, {"d": "2026-02-24", "oil": 68.9, "wat": 7.0}, {"d": "2026-02-25", "oil": 70.0, "wat": 7.0}, {"d": "2026-02-26", "oil": 66.6, "wat": 7.0}, {"d": "2026-02-27", "oil": 70.2, "wat": 7.0}, {"d": "2026-02-28", "oil": 70.0, "wat": 7.0}, {"d": "2026-03-01", "oil": 70.3, "wat": 7.0}, {"d": "2026-03-02", "oil": 70.2, "wat": 7.0}, {"d": "2026-03-03", "oil": 68.9, "wat": 7.0}, {"d": "2026-03-04", "oil": 68.4, "wat": 7.0}, {"d": "2026-03-05", "oil": 70.2, "wat": 7.0}, {"d": "2026-03-06", "oil": 71.2, "wat": 7.0}, {"d": "2026-03-07", "oil": 70.3, "wat": 6.5}, {"d": "2026-03-08", "oil": 69.0, "wat": 6.5}, {"d": "2026-03-09", "oil": 67.0, "wat": 6.5}, {"d": "2026-03-10", "oil": 67.5, "wat": 6.5}, {"d": "2026-03-11", "oil": 66.5, "wat": 6.5}, {"d": "2026-03-12", "oil": 67.0, "wat": 6.5}, {"d": "2026-03-13", "oil": 67.0, "wat": 6.5}, {"d": "2026-03-14", "oil": 66.3, "wat": 6.5}, {"d": "2026-03-15", "oil": 67.4, "wat": 6.5}, {"d": "2026-03-16", "oil": 67.8, "wat": 6.5}, {"d": "2026-03-17", "oil": 66.5, "wat": 6.5}, {"d": "2026-03-18", "oil": 67.5, "wat": 6.5}, {"d": "2026-03-19", "oil": 69.4, "wat": 6.5}, {"d": "2026-03-20", "oil": 71.0, "wat": 7.0}, {"d": "2026-03-21", "oil": 70.9, "wat": 7.0}, {"d": "2026-03-22", "oil": 72.6, "wat": 7.0}, {"d": "2026-03-23", "oil": 73.9, "wat": 7.0}, {"d": "2026-03-24", "oil": 73.8, "wat": 7.0}, {"d": "2026-03-25", "oil": 74.5, "wat": 7.0}, {"d": "2026-03-26", "oil": 75.4, "wat": 7.0}, {"d": "2026-03-27", "oil": 74.2, "wat": 7.0}, {"d": "2026-03-28", "oil": 74.3, "wat": 7.0}, {"d": "2026-03-29", "oil": 74.5, "wat": 7.0}, {"d": "2026-03-30", "oil": 73.4, "wat": 7.0}, {"d": "2026-03-31", "oil": 74.8, "wat": 7.0}, {"d": "2026-04-01", "oil": 73.1, "wat": 7.0}, {"d": "2026-04-02", "oil": 75.0, "wat": 7.0}, {"d": "2026-04-03", "oil": 71.8, "wat": 7.0}, {"d": "2026-04-04", "oil": 74.7, "wat": 7.0}, {"d": "2026-04-05", "oil": 74.5, "wat": 7.0}, {"d": "2026-04-06", "oil": 73.6, "wat": 7.0}, {"d": "2026-04-07", "oil": 73.4, "wat": 7.0}, {"d": "2026-04-08", "oil": 74.5, "wat": 7.0}, {"d": "2026-04-09", "oil": 74.3, "wat": 7.0}, {"d": "2026-04-10", "oil": 73.9, "wat": 7.0}, {"d": "2026-04-11", "oil": 74.1, "wat": 7.0}, {"d": "2026-04-12", "oil": 73.5, "wat": 7.0}, {"d": "2026-04-13", "oil": 73.4, "wat": 7.0}, {"d": "2026-04-14", "oil": 73.6, "wat": 7.0}, {"d": "2026-04-15", "oil": 73.4, "wat": 7.0}, {"d": "2026-04-16", "oil": 73.9, "wat": 7.0}, {"d": "2026-04-17", "oil": 74.8, "wat": 7.0}, {"d": "2026-04-18", "oil": 73.5, "wat": 7.0}, {"d": "2026-04-19", "oil": 74.0, "wat": 7.0}, {"d": "2026-04-20", "oil": 74.5, "wat": 7.0}, {"d": "2026-04-21", "oil": 74.7, "wat": 7.0}, {"d": "2026-04-22", "oil": 74.9, "wat": 7.0}, {"d": "2026-04-23", "oil": 73.2, "wat": 7.0}, {"d": "2026-04-24", "oil": 73.9, "wat": 7.0}, {"d": "2026-04-25", "oil": 73.9, "wat": 7.0}, {"d": "2026-04-26", "oil": 72.9, "wat": 7.0}, {"d": "2026-04-27", "oil": 72.2, "wat": 7.0}, {"d": "2026-04-28", "oil": 72.0, "wat": 7.0}, {"d": "2026-04-29", "oil": 72.9, "wat": 7.0}, {"d": "2026-04-30", "oil": 72.7, "wat": 7.0}, {"d": "2026-05-01", "oil": 73.5, "wat": 7.0}, {"d": "2026-05-02", "oil": 73.2, "wat": 7.0}, {"d": "2026-05-03", "oil": 72.5, "wat": 7.0}, {"d": "2026-05-04", "oil": 72.3, "wat": 7.0}, {"d": "2026-05-05", "oil": 73.5, "wat": 7.0}, {"d": "2026-05-06", "oil": 73.6, "wat": 7.0}, {"d": "2026-05-07", "oil": 72.7, "wat": 7.0}, {"d": "2026-05-08", "oil": 72.0, "wat": 7.0}, {"d": "2026-05-09", "oil": 73.1, "wat": 7.0}, {"d": "2026-05-10", "oil": 72.6, "wat": 7.0}, {"d": "2026-05-11", "oil": 72.4, "wat": 7.0}, {"d": "2026-05-12", "oil": 72.2, "wat": 7.0}, {"d": "2026-05-13", "oil": 71.2, "wat": 6.0}, {"d": "2026-05-14", "oil": 71.9, "wat": 6.0}, {"d": "2026-05-15", "oil": 70.7, "wat": 6.0}, {"d": "2026-05-16", "oil": 71.7, "wat": 6.0}, {"d": "2026-05-17", "oil": 68.3, "wat": 3.0}, {"d": "2026-05-18", "oil": 73.6, "wat": 3.2}, {"d": "2026-05-19", "oil": 70.3, "wat": 5.0}, {"d": "2026-05-20", "oil": 70.6, "wat": 5.0}, {"d": "2026-05-21", "oil": 71.3, "wat": 7.0}, {"d": "2026-05-22", "oil": 71.0, "wat": 7.0}, {"d": "2026-05-23", "oil": 72.0, "wat": 7.0}, {"d": "2026-05-24", "oil": 73.1, "wat": 7.0}, {"d": "2026-05-25", "oil": 72.8, "wat": 7.0}, {"d": "2026-05-26", "oil": 70.8, "wat": 8.5}, {"d": "2026-05-27", "oil": 72.2, "wat": 8.5}, {"d": "2026-05-28", "oil": 71.4, "wat": 9.0}, {"d": "2026-05-29", "oil": 72.0, "wat": 9.0}, {"d": "2026-05-30", "oil": 69.8, "wat": 9.0}, {"d": "2026-05-31", "oil": 69.2, "wat": 11.5}, {"d": "2026-06-01", "oil": 69.6, "wat": 10.5}, {"d": "2026-06-02", "oil": 67.2, "wat": 11.0}, {"d": "2026-06-03", "oil": 65.1, "wat": 10.0}, {"d": "2026-06-04", "oil": 65.7, "wat": 9.0}, {"d": "2026-06-05", "oil": 63.5, "wat": 9.0}, {"d": "2026-06-06", "oil": 65.6, "wat": 7.0}, {"d": "2026-06-07", "oil": 65.2, "wat": 7.0}, {"d": "2026-06-08", "oil": 65.6, "wat": 7.0}, {"d": "2026-06-09", "oil": 65.2, "wat": 7.0}, {"d": "2026-06-10", "oil": 63.7, "wat": 7.0}, {"d": "2026-06-11", "oil": 63.4, "wat": 7.0}, {"d": "2026-06-12", "oil": 60.2, "wat": 7.0}, {"d": "2026-06-13", "oil": 59.4, "wat": 9.0}, {"d": "2026-06-14", "oil": 59.8, "wat": 7.0}, {"d": "2026-06-15", "oil": 61.6, "wat": 7.0}, {"d": "2026-06-16", "oil": 62.0, "wat": 6.0}, {"d": "2026-06-17", "oil": 61.2, "wat": 6.0}, {"d": "2026-06-18", "oil": 61.6, "wat": 9.0}, {"d": "2026-06-19", "oil": 60.4, "wat": 9.0}, {"d": "2026-06-20", "oil": 59.7, "wat": 8.5}, {"d": "2026-06-21", "oil": 60.3, "wat": 8.0}, {"d": "2026-06-22", "oil": 59.8, "wat": 9.0}, {"d": "2026-06-23", "oil": 58.2, "wat": 10.0}, {"d": "2026-06-24", "oil": 58.3, "wat": 8.5}, {"d": "2026-06-25", "oil": 59.4, "wat": 8.0}, {"d": "2026-06-26", "oil": 62.4, "wat": 7.5}, {"d": "2026-06-27", "oil": 62.9, "wat": 9.0}, {"d": "2026-06-28", "oil": 63.5, "wat": 8.5}, {"d": "2026-06-29", "oil": 71.9, "wat": 8.5}, {"d": "2026-06-30", "oil": 72.9, "wat": 8.5}, {"d": "2026-07-01", "oil": 73.4, "wat": 8.5}]}, "208": {"monthly": [{"m": "2026-01", "oil": 194.7, "wat": 58.5}, {"m": "2026-02", "oil": 92.8, "wat": 62.8}, {"m": "2026-04", "oil": 63.1, "wat": 64.1}], "daily": [{"d": "2026-01-01", "oil": 5.6, "wat": 71.0}, {"d": "2026-01-02", "oil": 4.7, "wat": 73.0}, {"d": "2026-01-03", "oil": 5.5, "wat": 65.0}, {"d": "2026-01-04", "oil": 5.0, "wat": 70.0}, {"d": "2026-01-05", "oil": 5.7, "wat": 67.0}, {"d": "2026-01-06", "oil": 4.4, "wat": 76.0}, {"d": "2026-01-07", "oil": 6.3, "wat": 63.0}, {"d": "2026-01-08", "oil": 4.2, "wat": 65.0}, {"d": "2026-01-09", "oil": 1.4, "wat": 19.0}, {"d": "2026-01-10", "oil": 5.6, "wat": 18.0}, {"d": "2026-01-11", "oil": 6.4, "wat": 52.0}, {"d": "2026-01-12", "oil": 6.6, "wat": 61.0}, {"d": "2026-01-13", "oil": 7.4, "wat": 62.0}, {"d": "2026-01-14", "oil": 6.8, "wat": 58.0}, {"d": "2026-01-15", "oil": 5.3, "wat": 65.0}, {"d": "2026-01-16", "oil": 5.8, "wat": 62.0}, {"d": "2026-01-17", "oil": 5.9, "wat": 60.0}, {"d": "2026-01-18", "oil": 6.4, "wat": 58.0}, {"d": "2026-01-19", "oil": 10.6, "wat": 48.0}, {"d": "2026-01-20", "oil": 6.9, "wat": 55.0}, {"d": "2026-01-21", "oil": 7.4, "wat": 54.0}, {"d": "2026-01-22", "oil": 6.3, "wat": 58.0}, {"d": "2026-01-23", "oil": 6.5, "wat": 60.0}, {"d": "2026-01-24", "oil": 8.0, "wat": 55.0}, {"d": "2026-01-25", "oil": 8.2, "wat": 53.0}, {"d": "2026-01-26", "oil": 8.9, "wat": 56.0}, {"d": "2026-01-27", "oil": 7.9, "wat": 53.0}, {"d": "2026-01-28", "oil": 8.5, "wat": 55.0}, {"d": "2026-01-29", "oil": 6.5, "wat": 62.0}, {"d": "2026-01-30", "oil": 4.3, "wat": 74.0}, {"d": "2026-01-31", "oil": 5.7, "wat": 65.0}, {"d": "2026-02-01", "oil": 4.2, "wat": 69.0}, {"d": "2026-02-02", "oil": 4.5, "wat": 61.0}, {"d": "2026-02-03", "oil": 4.6, "wat": 66.0}, {"d": "2026-02-04", "oil": 5.0, "wat": 64.0}, {"d": "2026-02-05", "oil": 5.4, "wat": 62.0}, {"d": "2026-02-06", "oil": 4.6, "wat": 65.0}, {"d": "2026-02-07", "oil": 5.3, "wat": 61.0}, {"d": "2026-02-08", "oil": 6.7, "wat": 54.0}, {"d": "2026-02-09", "oil": 5.8, "wat": 52.0}, {"d": "2026-02-10", "oil": 6.4, "wat": 59.0}, {"d": "2026-02-11", "oil": 4.6, "wat": 64.0}, {"d": "2026-02-12", "oil": 5.7, "wat": 61.0}, {"d": "2026-02-13", "oil": 5.4, "wat": 60.0}, {"d": "2026-02-14", "oil": 6.1, "wat": 56.0}, {"d": "2026-02-15", "oil": 4.4, "wat": 63.0}, {"d": "2026-02-16", "oil": 4.2, "wat": 65.0}, {"d": "2026-02-17", "oil": 3.8, "wat": 69.0}, {"d": "2026-02-18", "oil": 3.0, "wat": 70.0}, {"d": "2026-02-19", "oil": 2.1, "wat": 74.0}, {"d": "2026-02-20", "oil": 1.0, "wat": 60.0}, {"d": "2026-04-01", "oil": 20.9, "wat": 33.0}, {"d": "2026-04-02", "oil": 5.5, "wat": 84.0}, {"d": "2026-04-03", "oil": 2.2, "wat": 82.0}, {"d": "2026-04-13", "oil": 16.0, "wat": 35.0}, {"d": "2026-04-14", "oil": 2.3, "wat": 89.0}, {"d": "2026-04-28", "oil": 14.5, "wat": 39.0}, {"d": "2026-04-29", "oil": 1.7, "wat": 87.0}]}, "206": {"monthly": [{"m": "2026-01", "oil": 19.1, "wat": 48.5}, {"m": "2026-04", "oil": 38.2, "wat": 72.8}, {"m": "2026-05", "oil": 17.6, "wat": 65.0}], "daily": [{"d": "2026-01-08", "oil": 16.2, "wat": 19.0}, {"d": "2026-01-09", "oil": 2.9, "wat": 78.0}, {"d": "2026-04-06", "oil": 17.1, "wat": 44.0}, {"d": "2026-04-07", "oil": 6.0, "wat": 86.0}, {"d": "2026-04-08", "oil": 2.0, "wat": 85.0}, {"d": "2026-04-21", "oil": 11.7, "wat": 57.0}, {"d": "2026-04-22", "oil": 1.4, "wat": 92.0}, {"d": "2026-05-12", "oil": 14.9, "wat": 43.0}, {"d": "2026-05-13", "oil": 2.7, "wat": 87.0}]}, "211": {"monthly": [{"m": "2026-05", "oil": 14.2, "wat": 2.1}, {"m": "2026-06", "oil": 28.3, "wat": 4.3}], "daily": [{"d": "2026-05-25", "oil": 4.4, "wat": 5.0}, {"d": "2026-05-28", "oil": 4.6, "wat": 1.2}, {"d": "2026-05-31", "oil": 5.2, "wat": 0.2}, {"d": "2026-06-03", "oil": 5.0, "wat": 4.4}, {"d": "2026-06-06", "oil": 4.7, "wat": 6.8}, {"d": "2026-06-09", "oil": 4.6, "wat": 3.0}, {"d": "2026-06-12", "oil": 4.8, "wat": 4.0}, {"d": "2026-06-15", "oil": 9.2, "wat": 3.5}]}};
-var AM_PLAN = {"asset": {"2026-01": 895.4, "2026-02": 887.8, "2026-03": 880.3, "2026-04": 872.8, "2026-05": 865.3, "2026-06": 857.8, "2026-07": 850.1, "2026-08": 842.7, "2026-09": 835.2, "2026-10": 827.5, "2026-11": 820.2, "2026-12": 812.7}, "wells": {"431": {"2026-01": 218.6, "2026-02": 216.7, "2026-03": 214.9, "2026-04": 213.1, "2026-05": 211.2, "2026-06": 209.4, "2026-07": 207.5, "2026-08": 205.7, "2026-09": 203.9, "2026-10": 202.0, "2026-11": 200.2, "2026-12": 198.4}, "427": {"2026-01": 218.6, "2026-02": 216.7, "2026-03": 214.9, "2026-04": 213.1, "2026-05": 211.2, "2026-06": 209.4, "2026-07": 207.5, "2026-08": 205.7, "2026-09": 203.9, "2026-10": 202.0, "2026-11": 200.2, "2026-12": 198.4}, "403": {"2026-01": 135.7, "2026-02": 134.5, "2026-03": 133.4, "2026-04": 132.2, "2026-05": 131.1, "2026-06": 130.0, "2026-07": 128.8, "2026-08": 127.7, "2026-09": 126.5, "2026-10": 125.4, "2026-11": 124.3, "2026-12": 123.1}, "408": {"2026-01": 150.7, "2026-02": 149.5, "2026-03": 148.2, "2026-04": 146.9, "2026-05": 145.7, "2026-06": 144.4, "2026-07": 143.1, "2026-08": 141.9, "2026-09": 140.6, "2026-10": 139.3, "2026-11": 138.1, "2026-12": 136.8}, "Т1": {"2026-01": 90.4, "2026-02": 89.7, "2026-03": 88.9, "2026-04": 88.2, "2026-05": 87.4, "2026-06": 86.6, "2026-07": 85.9, "2026-08": 85.1, "2026-09": 84.4, "2026-10": 83.6, "2026-11": 82.8, "2026-12": 82.1}, "Т7": {"2026-01": 81.4, "2026-02": 80.7, "2026-03": 80.0, "2026-04": 79.3, "2026-05": 78.7, "2026-06": 78.0, "2026-07": 77.3, "2026-08": 76.6, "2026-09": 75.9, "2026-10": 75.2, "2026-11": 74.6, "2026-12": 73.9}}};
-var AR_PLAN = {"asset": {"2026-01": 2416, "2026-02": 2159, "2026-03": 2240, "2026-04": 2231, "2026-05": 2263, "2026-06": 2155, "2026-07": 2187, "2026-08": 2149, "2026-09": 2044, "2026-10": 2072, "2026-11": 1969, "2026-12": 1995}, "wells": {"200": {"2026-01": 2296, "2026-02": 2048, "2026-03": 2138, "2026-04": 2138, "2026-05": 2180, "2026-06": 2081, "2026-07": 2122, "2026-08": 2093, "2026-09": 1997, "2026-10": 2034, "2026-11": 1941, "2026-12": 1976}, "208": {"2026-01": 60, "2026-02": 55, "2026-03": 50, "2026-04": 45, "2026-05": 40, "2026-06": 35, "2026-07": 30, "2026-08": 25, "2026-09": 20, "2026-10": 15, "2026-11": 10, "2026-12": 5}, "206": {"2026-01": 50, "2026-02": 46, "2026-03": 42, "2026-04": 38, "2026-05": 33, "2026-06": 29, "2026-07": 25, "2026-08": 21, "2026-09": 17, "2026-10": 13, "2026-11": 8, "2026-12": 4}}};
-var AM_CLR  = {"431": "#A8C8E8", "427": "#A8D4BA", "403": "#C4C8DC", "408": "#A8D0CC", "Т1": "#D4BEDA", "Т7": "#B8CCE0"};
-var AR_CLR  = {"200": "#A8C8E8", "208": "#A8D4BA", "206": "#C4C8DC"};
+/* ---------- ДАННЫЕ ---------- */
 
-var FACT_MK = ['2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07'];
-var ALL_MK  = ['2026-01','2026-02','2026-03','2026-04','2026-05','2026-06',
-               '2026-07','2026-08','2026-09','2026-10','2026-11','2026-12'];
-var ML = {
-  '2026-01':'Янв','2026-02':'Фев','2026-03':'Мар','2026-04':'Апр',
-  '2026-05':'Май','2026-06':'Июн','2026-07':'Июл','2026-08':'Авг',
-  '2026-09':'Сен','2026-10':'Окт','2026-11':'Ноя','2026-12':'Дек'
-};
-var DAYS = {
-  '2026-01':31,'2026-02':28,'2026-03':31,'2026-04':30,
-  '2026-05':31,'2026-06':30,'2026-07':31,'2026-08':31,
-  '2026-09':30,'2026-10':31,'2026-11':30,'2026-12':31
-};
-var ELAPSED    = {'2026-01':31,'2026-02':28,'2026-03':31,'2026-04':30,'2026-05':31,'2026-06':30,'2026-07':1};
-var DAYS_M     = {'2026-01':31,'2026-02':28,'2026-03':31,'2026-04':30,'2026-05':31,'2026-06':30,'2026-07':31,'2026-08':31,'2026-09':30,'2026-10':31,'2026-11':30,'2026-12':31};
-var CUR_MONTH  = '2026-07';
-var CUR_ELAPSED= 1;
+const currencySplit = { aed: 0.4, usd: 0.6 };
 
-var CUR = 'am'; var AW = null; var CH = {};
-
-function F()   { return CUR === 'am' ? AM_FACT : AR_FACT; }
-function P()   { return CUR === 'am' ? AM_PLAN : AR_PLAN; }
-function CLR() { return CUR === 'am' ? AM_CLR  : AR_CLR; }
-function WS()  {
-  var amOrder = ['431','427','403','408','Т1','Т7'];
-  var arOrder = ['200','208','206'];
-  var order = CUR === 'am' ? amOrder : arOrder;
-  var keys = Object.keys(F());
-  var sorted = order.filter(function(k){ return keys.indexOf(k) >= 0; });
-  keys.forEach(function(k){ if(sorted.indexOf(k) < 0) sorted.push(k); });
-  return sorted;
-}
-function YMax(){ return CUR === 'am' ? 20 : 100; }
-
-function r1(v){ return Math.round(v * 10) / 10; }
-function r0(v){ return Math.round(v); }
-
-function sumFact(mk){
-  return WS().reduce(function(s,w){
-    var m = F()[w].monthly.find(function(x){ return x.m === mk; });
-    return s + (m ? m.oil : 0);
-  }, 0);
-}
-function planM(mk)      { return P().asset[mk] || 0; }
-function planMProp(mk)  { var el=ELAPSED[mk]; if(!el) return planM(mk); return planM(mk)*(el/DAYS_M[mk]); }
-function planYTDProp()  { return FACT_MK.reduce(function(s,mk){ return s+planMProp(mk); }, 0); }
-function planYear()     { var ALL=['2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07','2026-08','2026-09','2026-10','2026-11','2026-12']; return ALL.reduce(function(s,mk){return s+(P().asset[mk]||0);},0); }
-function factYTD(){
-  return FACT_MK.reduce(function(s,mk){ return s + sumFact(mk); }, 0);
-}
-function wellFactYTD(w){
-  return FACT_MK.reduce(function(s,mk){
-    var m = F()[w].monthly.find(function(x){ return x.m === mk; });
-    return s + (m ? m.oil : 0);
-  }, 0);
-}
-function planYear(){
-  return ALL_MK.reduce(function(s,mk){ return s + (P().asset[mk] || 0); }, 0);
-}
-function wellPlanYear(w){
-  var wp = P().wells[w];
-  if (!wp) return 0;
-  return ALL_MK.reduce(function(s,mk){ return s + (wp[mk] || 0); }, 0);
-}
-function lastDay(){
-  var ws = WS(); var fact = F();
-  var maxDate = ws.reduce(function(mx,w){
-    var d = fact[w].daily; var l = d[d.length-1];
-    return (l && l.d > mx) ? l.d : mx;
-  }, '');
-  return ws.reduce(function(s,w){
-    var d = fact[w].daily; var l = d[d.length-1];
-    return s + (l && l.d === maxDate ? l.oil : 0);
-  }, 0);
+// Единый шаблон операций по банку (используется одинаково для примера по всем банкам и принципалам)
+// Терминология: тип операции — юридически/финансово нейтральный термин, контрагент — сторона расчёта
+function bankTemplate() {
+  return {
+    opening: 999987,
+    income: [
+      { date: '12.03.2026', counterparty: 'Компания 1', type: 'Заём', amount: 50000000 },
+      { date: null,         counterparty: '',           type: 'Проценты по депозиту', amount: 375 }
+    ],
+    expense: [
+      { date: '02.04.2026', counterparty: 'София',      type: 'Подарок', amount: 8000000 },
+      { date: '12.05.2026', counterparty: 'ENBD SG',    type: 'Перевод между собственными счетами', amount: 10000000 },
+      { date: '13.05.2026', counterparty: 'Компания 2', type: 'Приобретение недвижимости', amount: 3062000 },
+      { date: '25.05.2026', counterparty: 'Компания 3', type: 'Приобретение услуг', amount: 8058 },
+      { date: '05.06.2026', counterparty: 'Компания 2', type: 'Приобретение недвижимости', amount: 27870000 },
+      { date: null,         counterparty: '',           type: 'Банковские расходы', amount: 292 }
+    ]
+  };
 }
 
-var TT = {backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10};
-var GR = {color:'#EAE6DA'};
-var TK = {color:'#9A9888',font:{size:10}};
+const banks = ['ENBD', 'Frick', 'RBK'];
+const principals = ['ЭВО', 'ОНН', 'ВСК'];
 
-function dc(id){ if(CH[id]){ CH[id].destroy(); delete CH[id]; } }
-function mc(id,cfg){ dc(id); var el=document.getElementById(id); if(el) CH[id]=new Chart(el,cfg); }
-function fmtT(v){ return r1(v) + ' тн'; }
+const data = {};
+principals.forEach(p => {
+  data[p] = {};
+  banks.forEach(b => { data[p][b] = bankTemplate(); });
+});
 
-function addKpi(el, bdr, vc, lbl, val, sub, badge, bcls){
-  var d = document.createElement('div');
-  d.className = 'kpi'; d.style.borderLeftColor = bdr;
-  var h = '<div class="kl">'+lbl+'</div>'
-    + '<div class="kv" style="color:'+vc+'">'+val+'</div>'
-    + '<div class="ks">'+sub+'</div>';
-  if (badge) h += '<span class="badge '+bcls+'">'+badge+'</span>';
-  d.innerHTML = h;
-  el.appendChild(d);
+/* ---------- ВСПОМОГАТЕЛЬНЫЕ ФУНКЦИИ ---------- */
+
+function fmt(n) { return n.toLocaleString('ru-RU'); }
+function sum(arr) { return arr.reduce((s, x) => s + x.amount, 0); }
+
+function computeBank(b) {
+  const inc = sum(b.income);
+  const out = sum(b.expense);
+  const balance = b.opening + inc - out;
+  return { inc, out, balance };
 }
 
-// HERO
-function renderHero(){
-  var name = CUR === 'am' ? 'Asker Munai' : 'Altay Resources';
-  document.getElementById('htitle').textContent = name + ' — 2026';
-  var fact = r0(factYTD());
-  var plan = r0(planYear());
-  var pct  = plan > 0 ? r1(fact / plan * 100) : 0;
-  var pcls = pct >= 100 ? 'c-gr' : pct >= 90 ? 'c-am' : 'c-rs';
-  var twa = CUR === 'am' ? 6 : 1;
-  var twt = CUR === 'am' ? 9 : 6;
-  var h = document.getElementById('hrow');
-  h.innerHTML = '';
-  var pProp = r0(planYTDProp());
-  var dev   = fact - pProp;
-  var devC  = dev >= 0 ? 'c-gr' : 'c-rs';
-  [
-    ['c-nt', twa+'/'+twt,                              'скважин в работе'],
-    ['c-bl', r1(lastDay())+' тн',                      'добыча последние сутки'],
-    ['c-gr', fact+' тн',                               'факт с начала года'],
-    ['c-vi', pProp+' тн',                              'план на '+CUR_ELAPSED+' '+ML[CUR_MONTH].toLowerCase().slice(0,3)+'.'],
-    [devC,   (dev>=0?'+':'')+dev+' тн',               'отклонение'],
-    ['c-am', plan+' тн',                               'план на год']
-  ].forEach(function(it){
-    var d = document.createElement('div');
-    d.className = 'hk '+it[0];
-    d.innerHTML = '<div class="hkv">'+it[1]+'</div><div class="hkl">'+it[2]+'</div>';
-    h.appendChild(d);
+function groupByType(items) {
+  const map = {};
+  items.forEach(i => {
+    if (!map[i.type]) map[i.type] = { type: i.type, amount: 0 };
+    map[i.type].amount += i.amount;
   });
+  return Object.values(map).sort((a, b) => b.amount - a.amount);
 }
 
-function setA(id,btn){
-  CUR=id; AW=WS()[0];
-  document.querySelectorAll('.atab').forEach(function(b){b.classList.remove('on');});
-  btn.classList.add('on');
-  document.getElementById('wbtns').innerHTML='';
-  document.getElementById('wpf-wrap').innerHTML='';
-  renderHero();
-  var sec=document.querySelector('.sec.on');
-  if(sec){ var sid=sec.id.replace('s-',''); if(sid==='sum') renderSum(); else if(sid==='wells') renderWells(); else renderPF(); }
+let uid = 0;
+function nextId() { return 'id' + (uid++); }
+
+/* ---------- РЕНДЕР ---------- */
+
+function renderCurrencyCard(balance) {
+  const aed = Math.round(balance * currencySplit.aed);
+  const usd = balance - aed;
+  return `
+    <div class="card">
+      <div class="card-label">Состав остатка по валютам</div>
+      <div class="comp-bars">
+        <div class="comp-row">
+          <div class="comp-label short">AED</div>
+          <div class="bar-track"><div class="bar-fill aed" style="width:${currencySplit.aed*100}%"></div></div>
+          <div class="comp-amount">${fmt(aed)}</div>
+        </div>
+        <div class="comp-row">
+          <div class="comp-label short">USD</div>
+          <div class="bar-track"><div class="bar-fill usd" style="width:${currencySplit.usd*100}%"></div></div>
+          <div class="comp-amount">${fmt(usd)}</div>
+        </div>
+      </div>
+    </div>`;
 }
 
-function goS(id,btn){
-  document.querySelectorAll('.sec').forEach(function(s){s.classList.remove('on');});
-  document.getElementById('s-'+id).classList.add('on');
-  document.querySelectorAll('.snb').forEach(function(b){b.classList.remove('on');});
-  btn.classList.add('on');
-  if(id==='sum') renderSum(); else if(id==='wells') renderWells(); else renderPF();
+function renderTypeCard(title, items, cls) {
+  const grouped = groupByType(items);
+  const max = Math.max(...grouped.map(g => g.amount));
+  const rows = grouped.map(g => `
+    <div class="comp-row">
+      <div class="comp-label">${g.type}</div>
+      <div class="bar-track"><div class="bar-fill ${cls}" style="width:${(g.amount/max*100).toFixed(0)}%"></div></div>
+      <div class="comp-amount ${cls}">${cls==='inc'?'+':'−'}${fmt(g.amount)}</div>
+    </div>`).join('');
+  return `
+    <div class="card">
+      <div class="card-label">${title}</div>
+      <div class="comp-bars">${rows}</div>
+    </div>`;
 }
 
-// СВОДКА
-function renderSum(){
-  var fact=r0(factYTD()), plan=r0(planYear());
-  var pct=plan>0?r1(fact/plan*100):0;
-  var pb=pct>=100?'#6EAE8E':pct>=90?'#C4A96B':'#A07C8C';
-  var pv=pct>=100?'#2D7A52':pct>=90?'#8A6020':'#8A3550';
-  var aprF=r0(sumFact(CUR_MONTH)), aprP=r0(P().asset[CUR_MONTH]||0);
-  var el=document.getElementById('sum-kpis'); el.innerHTML='';
-
-  var ws=WS(), clrs=CLR();
-  var aprDates=[];
-  ws.forEach(function(w){ F()[w].daily.forEach(function(d){ if(d.d.slice(0,7)===CUR_MONTH&&aprDates.indexOf(d.d)<0) aprDates.push(d.d); }); });
-  aprDates.sort();
-  var aprOils=aprDates.map(function(dt){ return r1(ws.reduce(function(s,w){ var r=F()[w].daily.find(function(x){return x.d===dt;}); return s+(r?r.oil:0); },0)); });
-
-  document.getElementById('ct-cSD').textContent = 'Суточная добыча — '+ML[CUR_MONTH]+' (тн)';
-  mc('cSD',{type:'line',data:{labels:aprDates.map(function(d){return d.slice(5);}),datasets:[{label:'Нефть тн',data:aprOils,borderColor:'#7EC8A0',backgroundColor:'#7EC8A018',borderWidth:2,pointRadius:3,pointBackgroundColor:'#7EC8A0',fill:true,tension:0.3}]},
-    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:function(v){return (Math.round(v.raw*10)/10)+' тн';}},backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}},
-      scales:{y:{beginAtZero:true,grid:GR,ticks:{callback:function(v){return (Math.round(v*10)/10)+' тн';},color:'#9A9888',font:{size:10}}},x:{grid:{display:false},ticks:TK}}}});
-
-  var mDs=ws.map(function(w){return {label:'Скв. '+w,data:FACT_MK.map(function(mk){var m=F()[w].monthly.find(function(x){return x.m===mk;});return m?r1(m.oil):0;}),backgroundColor:clrs[w]+'DD',borderColor:clrs[w],borderWidth:1,borderRadius:3,stack:'s'};});
-  mc('cMM',{type:'bar',data:{labels:FACT_MK.map(function(k){return ML[k];}),datasets:mDs},
-    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-      plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},color:'#7a7a6a',boxWidth:10,padding:8}},tooltip:{callbacks:{label:function(v){return v.dataset.label+': '+fmtT(v.raw);}},backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}},
-      scales:{y:{stacked:true,grid:GR,ticks:{callback:function(v){return (Math.round(v*10)/10)+' тн';},color:'#9A9888',font:{size:10}}},x:{stacked:true,grid:{display:false},ticks:TK}}}});
-
-  renderPie('cPY',ws.map(function(w){return 'Скв. '+w;}),ws.map(function(w){return r0(wellFactYTD(w));}),ws.map(function(w){return clrs[w];}));
-  renderPie('cPA',ws.map(function(w){return 'Скв. '+w;}),ws.map(function(w){var m=F()[w].monthly.find(function(x){return x.m===CUR_MONTH;});return m?r1(m.oil):0;}),ws.map(function(w){return clrs[w];}));
+function renderTxBox(title, items, cls, total) {
+  const boxId = nextId();
+  const rows = items.map(i => {
+    const main = i.counterparty ? `<span class="row-cp">${i.counterparty}</span>` : `<span class="row-cp">${i.type}</span>`;
+    const tag = i.counterparty ? `<span class="row-tag">${i.type}</span>` : '';
+    return `
+    <div class="row-item">
+      <div class="row-date">${i.date || '—'}</div>
+      <div class="row-desc">${main}${tag}</div>
+      <div class="row-amount ${cls}">${cls==='inc'?'+':'−'}${fmt(i.amount)}</div>
+    </div>`;
+  }).join('');
+  return `
+    <div class="box">
+      <div class="box-header" onclick="toggle('${boxId}')">
+        <div class="box-title-row"><div class="dot dot-${cls==='inc'?'green':'red'}"></div><div class="box-title">${title} — операции</div></div>
+        <div style="display:flex;align-items:center">
+          <div class="box-total ${cls==='inc'?'green':'red'}">${cls==='inc'?'+':'−'}${fmt(total)}</div>
+          <div class="chevron open" id="chev-${boxId}">▾</div>
+        </div>
+      </div>
+      <div class="list-body open" id="${boxId}">${rows}</div>
+    </div>`;
 }
 
-function renderPie(id,labels,vals,colors){
-  mc(id,{type:'doughnut',data:{labels:labels,datasets:[{data:vals,backgroundColor:colors,borderWidth:2,borderColor:'#F4F2EC',hoverOffset:5}]},
-    options:{responsive:true,maintainAspectRatio:false,cutout:'55%',
-      plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},color:'#7a7a6a',boxWidth:10,padding:8,
-        generateLabels:function(c){var ds=c.data;return ds.labels.map(function(l,i){return {text:l+' '+ds.datasets[0].data[i]+' тн',fillStyle:ds.datasets[0].backgroundColor[i],strokeStyle:'transparent',lineWidth:0};});}}},
-      tooltip:{callbacks:{label:function(v){return v.label+': '+fmtT(v.raw);}},backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}}}});
+function renderBankPanel(p, b) {
+  const bd = data[p][b];
+  const { inc, out, balance } = computeBank(bd);
+  return `
+    <div class="opening-row">
+      <div class="opening-label">Остаток на 01.01.2026 — ${b}</div>
+      <div class="opening-value">${fmt(bd.opening)}</div>
+    </div>
+    <div class="summary-row">
+      <div class="card">
+        <div class="card-label">Поступления 2026</div>
+        <div class="card-value positive">+${fmt(inc)}</div>
+        <div class="card-sub">${bd.income.length} операции</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Выбытия 2026</div>
+        <div class="card-value negative">−${fmt(out)}</div>
+        <div class="card-sub">${bd.expense.length} операций</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Текущий остаток</div>
+        <div class="card-value">${fmt(balance)}</div>
+        <div class="card-sub">актуально сегодня</div>
+      </div>
+      ${renderCurrencyCard(balance)}
+    </div>
+    <div class="types-row">
+      ${renderTypeCard('Поступления по типам', bd.income, 'inc')}
+      ${renderTypeCard('Выбытия по типам', bd.expense, 'out')}
+    </div>
+    ${renderTxBox('Поступления', bd.income, 'inc', inc)}
+    ${renderTxBox('Выбытия', bd.expense, 'out', out)}
+  `;
 }
 
-// ПО СКВАЖИНАМ
-function renderWells(){
-  if(!AW) AW=WS()[0];
-  var ctr=document.getElementById('wbtns');
-  if(!ctr.children.length){
-    WS().forEach(function(w){
-      var b=document.createElement('button');
-      b.id='wb-'+CUR+'-'+w; b.className='wb'+(w===AW?' on':'');
-      b.textContent='Скв. '+w;
-      if(w===AW){b.style.background=CLR()[w];b.style.borderColor=CLR()[w];}
-      b.onclick=function(){selW(w);};
-      ctr.appendChild(b);
+function renderSvodPanel(p) {
+  let totalOpen = 0, totalInc = 0, totalOut = 0, totalBal = 0;
+  const rows = banks.map(b => {
+    const bd = data[p][b];
+    const { inc, out, balance } = computeBank(bd);
+    totalOpen += bd.opening; totalInc += inc; totalOut += out; totalBal += balance;
+    return `
+      <tr>
+        <td class="bank-name">${b}</td>
+        <td class="num">${fmt(bd.opening)}</td>
+        <td class="num inc">+${fmt(inc)}</td>
+        <td class="num out">−${fmt(out)}</td>
+        <td class="num">${fmt(balance)}</td>
+      </tr>`;
+  }).join('');
+
+  const allIncome = banks.flatMap(b => data[p][b].income);
+  const allExpense = banks.flatMap(b => data[p][b].expense);
+
+  return `
+    <div class="opening-row">
+      <div class="opening-label">Совокупный остаток на 01.01.2026 — все банки</div>
+      <div class="opening-value">${fmt(totalOpen)}</div>
+    </div>
+    <div class="summary-row">
+      <div class="card">
+        <div class="card-label">Поступления 2026, всего</div>
+        <div class="card-value positive">+${fmt(totalInc)}</div>
+        <div class="card-sub">${banks.length} банка</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Выбытия 2026, всего</div>
+        <div class="card-value negative">−${fmt(totalOut)}</div>
+        <div class="card-sub">${banks.length} банка</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Текущий остаток, всего</div>
+        <div class="card-value">${fmt(totalBal)}</div>
+        <div class="card-sub">по всем банкам</div>
+      </div>
+      ${renderCurrencyCard(totalBal)}
+    </div>
+
+    <div class="box">
+      <div class="box-header" style="cursor:default">
+        <div class="box-title-row"><div class="dot dot-navy"></div><div class="box-title">Остатки по банкам</div></div>
+      </div>
+      <table class="svod-table">
+        <thead>
+          <tr>
+            <th>Банк</th>
+            <th class="num">Остаток на 01.01</th>
+            <th class="num">Поступления</th>
+            <th class="num">Выбытия</th>
+            <th class="num">Текущий остаток</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${rows}
+          <tr class="total-row">
+            <td>Итого</td>
+            <td class="num">${fmt(totalOpen)}</td>
+            <td class="num inc">+${fmt(totalInc)}</td>
+            <td class="num out">−${fmt(totalOut)}</td>
+            <td class="num">${fmt(totalBal)}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="types-row">
+      ${renderTypeCard('Поступления по типам — все банки', allIncome, 'inc')}
+      ${renderTypeCard('Выбытия по типам — все банки', allExpense, 'out')}
+    </div>
+  `;
+}
+
+function toggle(id) {
+  const body = document.getElementById(id);
+  const chev = document.getElementById('chev-' + id);
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  chev.classList.toggle('open', !isOpen);
+}
+
+/* ---------- ПОСТРОЕНИЕ СТРАНИЦЫ ---------- */
+
+function build() {
+  const tabsL1 = document.getElementById('tabsL1');
+  const content = document.getElementById('content');
+
+  principals.forEach((p, pi) => {
+    const tab = document.createElement('div');
+    tab.className = 'tab-l1' + (pi === 0 ? ' active' : '');
+    tab.textContent = p;
+    tab.onclick = () => switchPrincipal(p);
+    tabsL1.appendChild(tab);
+
+    const panel = document.createElement('div');
+    panel.className = 'principal-panel' + (pi === 0 ? ' active' : '');
+    panel.id = 'principal-' + p;
+
+    const l2wrap = document.createElement('div');
+    l2wrap.className = 'tabs-l2-wrap';
+    const l2 = document.createElement('div');
+    l2.className = 'tabs-l2';
+
+    const views = ['Свод', ...banks];
+    views.forEach((v, vi) => {
+      const t2 = document.createElement('div');
+      t2.className = 'tab-l2' + (vi === 0 ? ' active' : '');
+      t2.textContent = v === 'Свод' ? 'Свод по банкам' : v;
+      t2.onclick = () => switchBank(p, v, t2);
+      l2.appendChild(t2);
     });
-  }
-  renderWell();
-}
-function selW(w){
-  AW=w;
-  WS().forEach(function(x){
-    var b=document.getElementById('wb-'+CUR+'-'+x); if(!b) return;
-    if(x===w){b.className='wb on';b.style.background=CLR()[w];b.style.borderColor=CLR()[w];}
-    else{b.className='wb';b.style.background='';b.style.borderColor='';}
-  });
-  renderWell();
-}
-function renderWell(){
-  var wd=F()[AW]; var clr=CLR()[AW];
-  var factW=r0(wellFactYTD(AW)), planW=r0(wellPlanYear(AW));
-  var pctW=planW>0?r1(factW/planW*100):0;
-  var pb=pctW>=100?'b-gr':pctW>=90?'b-am':'b-rs';
-  var bdr=pctW>=100?'#6EAE8E':pctW>=90?'#C4A96B':'#A07C8C';
-  var vc=pctW>=100?'#2D7A52':pctW>=90?'#8A6020':'#8A3550';
-  var aprData=wd.daily.filter(function(d){return d.d.slice(0,7)===CUR_MONTH;});
-  var aprM=wd.monthly.find(function(x){return x.m===CUR_MONTH;});
-  var aprOil=aprM?r0(aprM.oil):0;
-  var aprPlan=P().wells[AW]?r0(P().wells[AW][CUR_MONTH]||0):0;
-  var aprPct=aprPlan>0?r1(aprOil/aprPlan*100):0;
-  var ab=aprPct>=100?'b-gr':aprPct>=90?'b-am':'b-rs';
-  var avgApr=aprData.length?r1(aprData.reduce(function(s,d){return s+d.oil;},0)/aprData.length):0;
-  var share=r0(factYTD())>0?r1(factW/r0(factYTD())*100):0;
+    l2wrap.appendChild(l2);
+    panel.appendChild(l2wrap);
 
-  document.getElementById('wt1').textContent='Скв. '+AW+' — суточная добыча ('+ML[CUR_MONTH]+', тн)';
-  var el=document.getElementById('w-kpis'); el.innerHTML='';
-  addKpi(el,clr,vc,'Факт с начала года',factW+' тн','план на год: '+planW+' тн','','');
-  addKpi(el,'#A8C8E8','#3A72A0',ML[CUR_MONTH]+' — факт',aprOil+' тн','план '+ML[CUR_MONTH].toLowerCase()+': '+aprPlan+' тн','','');
-  addKpi(el,'#C4A96B','#8A6020','Ср. суточная — '+ML[CUR_MONTH],avgApr+' тн/сут','за '+aprData.length+' дней','','');
-  (function(){
-    var watArr = wd.monthly.map(function(m){ return m.wat; });
-    var watAvg = watArr.length ? Math.round(watArr.reduce(function(s,v){return s+v;},0)/watArr.length*10)/10 : 0;
-    var watLast = wd.monthly.length ? Math.round(wd.monthly[wd.monthly.length-1].wat*10)/10 : 0;
-    var watClr = watLast > 50 ? '#C05050' : watLast > 20 ? '#8A6020' : '#2D7A52';
-    addKpi(el,'#B8CCE0',watClr,'Обводнённость ('+ML[CUR_MONTH]+')',watLast+'%','среднее за год: '+watAvg+'%','','');
-  }());
+    const bankContent = document.createElement('div');
+    bankContent.style.padding = '24px 40px';
+    bankContent.style.maxWidth = '1200px';
+    bankContent.style.margin = '0 auto';
+    bankContent.id = 'bankContent-' + p;
+    bankContent.innerHTML = renderSvodPanel(p);
+    panel.appendChild(bankContent);
 
-  mc('cWD',{type:'bar',data:{labels:aprData.map(function(d){return d.d.slice(5);}),datasets:[
-      {label:'Нефть тн',yAxisID:'y',data:aprData.map(function(d){return r1(d.oil);}),
-       backgroundColor:clr+'99',borderColor:clr,borderWidth:1,borderRadius:3},
-      {label:'Обводн. %',yAxisID:'y1',type:'line',
-       data:aprData.map(function(d){return r1(d.wat);}),
-       borderColor:'#B8B0CC',backgroundColor:'transparent',
-       borderWidth:2,pointRadius:3,pointBackgroundColor:'#B8B0CC',borderDash:[4,3],tension:0.3}
-    ]},options:{responsive:true,maintainAspectRatio:false,
-      interaction:{mode:'index',intersect:false},
-      plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},color:'#7a7a6a',boxWidth:10,padding:8}},
-               tooltip:{backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}},
-      scales:{
-        y:{min:0,max:YMax(),position:'left',grid:GR,ticks:{callback:function(v){return (Math.round(v*10)/10)+' тн';},color:'#9A9888',font:{size:10}}},
-        y1:{min:0,max:100,position:'right',grid:{display:false},ticks:{callback:function(v){return v+'%';},color:'#9A9888',font:{size:10}}}
-      }}});
-
-  mc('cWM',{type:'bar',data:{labels:FACT_MK.map(function(k){return ML[k];}),datasets:[
-    {label:'Нефть тн',yAxisID:'y',data:wd.monthly.map(function(m){return r1(m.oil);}),backgroundColor:clr+'99',borderColor:clr,borderWidth:1,borderRadius:3},
-    {label:'Обводн. %',yAxisID:'y1',type:'line',data:wd.monthly.map(function(m){return r1(m.wat);}),borderColor:'#B8C8D4',backgroundColor:'transparent',borderWidth:2,pointRadius:3,pointBackgroundColor:'#B8C8D4',borderDash:[4,3],tension:0.3}
-  ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-    plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},color:'#7a7a6a',boxWidth:10,padding:8}},tooltip:{backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}},
-    scales:{y:{min:0,position:'left',grid:GR,ticks:{callback:function(v){return (Math.round(v*10)/10)+' тн';},color:'#9A9888',font:{size:10}}},y1:{min:0,max:100,position:'right',grid:{display:false},ticks:{callback:function(v){return (Math.round(v*10)/10)+'%';},color:'#9A9888',font:{size:10}}}}}});
-
-  mc('cWP',{type:'doughnut',data:{labels:['Скв. '+AW,'Остальные'],datasets:[{data:[share,r1(100-share)],backgroundColor:[clr,'#E4E8EE'],borderWidth:0,hoverOffset:4}]},
-    options:{responsive:true,maintainAspectRatio:false,cutout:'60%',plugins:{
-      legend:{display:true,position:'bottom',labels:{font:{size:10},color:'#7a7a6a',boxWidth:10,padding:10,
-        generateLabels:function(c){var ds=c.data;return ds.labels.map(function(l,i){return {text:l+' '+ds.datasets[0].data[i]+'%',fillStyle:ds.datasets[0].backgroundColor[i],strokeStyle:'transparent',lineWidth:0};});}}},
-      tooltip:{callbacks:{label:function(v){return v.label+': '+r1(v.raw)+'%';}},backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}}}});
-
-  var wp=P().wells[AW];
-  var wPA=FACT_MK.map(function(mk){return wp?r1(wp[mk]||0):0;});
-  var wFA=FACT_MK.map(function(mk){var m=wd.monthly.find(function(x){return x.m===mk;});return m?r1(m.oil):0;});
-  var cp2=0,cf2=0;
-  var cumP2=wPA.map(function(v){cp2+=v;return r0(cp2);}), cumF2=wFA.map(function(v){cf2+=v;return r0(cf2);});
-  mc('cWC',{type:'line',data:{labels:FACT_MK.map(function(k){return ML[k];}),datasets:[
-    {label:'Накопл. план',data:cumP2,borderColor:'#A8B8CC',backgroundColor:'transparent',borderWidth:2,borderDash:[5,4],pointRadius:5,pointBackgroundColor:'#A8B8CC',tension:0.2},
-    {label:'Накопл. факт',data:cumF2,borderColor:clr,backgroundColor:clr+'20',borderWidth:2.5,pointRadius:5,pointBackgroundColor:clr,fill:true,tension:0.2}
-  ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-    plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},color:'#7a7a6a',boxWidth:10,padding:8}},tooltip:{callbacks:{label:function(v){return v.dataset.label+': '+fmtT(v.raw);}},backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}},
-    scales:{y:{beginAtZero:true,grid:GR,ticks:{callback:function(v){return (Math.round(v*10)/10)+' тн';},color:'#9A9888',font:{size:10}}},x:{grid:{display:false},ticks:TK}}}});
-}
-
-// ПЛАН / ФАКТ
-function renderPF(){
-  var factAll=r0(factYTD()), planAll=r0(planYear());
-  var pct=planAll>0?r1(factAll/planAll*100):0;
-  var pb=pct>=100?'b-gr':pct>=90?'b-am':'b-rs';
-  var bdr=pct>=100?'#6EAE8E':pct>=90?'#C4A96B':'#A07C8C';
-  var vc=pct>=100?'#2D7A52':pct>=90?'#8A6020':'#8A3550';
-  var btxt=pct>=100?'✓ план выполнен':pct>=90?'△ небольшое отставание':'✗ отставание';
-  var aprF=r0(sumFact(CUR_MONTH)), aprP=r0(P().asset[CUR_MONTH]||0);
-  var aprPct=aprP>0?r1(aprF/aprP*100):0;
-  var ab=aprPct>=100?'b-gr':aprPct>=90?'b-am':'b-rs';
-
-  var planArr=FACT_MK.map(function(mk){return r1(P().asset[mk]||0);});
-  var factArr=FACT_MK.map(function(mk){return r1(sumFact(mk));});
-
-  var el=document.getElementById('pf-kpis'); el.innerHTML='';
-  addKpi(el,'#6EAE8E','#2D7A52','Факт с начала года',factAll+' тн','янв–апр 2026','','');
-  addKpi(el,'#9A95C4','#5248A0','Годовой план',planAll+' тн','янв–дек 2026','','');
-  addKpi(el,'#A8C8E8','#3A72A0',ML[CUR_MONTH]+' — план vs факт',aprF+' / '+aprP+' тн','факт / план '+ML[CUR_MONTH].toLowerCase(),'','');
-
-  mc('cPFm',{type:'bar',data:{labels:FACT_MK.map(function(k){return ML[k];}),datasets:[
-    {label:'План',data:planArr,backgroundColor:'#A8B8CC30',borderColor:'#A8B8CC',borderWidth:1.5,borderRadius:5},
-    {label:'Факт',data:factArr,backgroundColor:'#7EC8A022',borderColor:'#7EC8A0',borderWidth:1.5,borderRadius:5}
-  ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-    plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},color:'#7a7a6a',boxWidth:10,padding:8}},tooltip:{callbacks:{label:function(v){return v.dataset.label+': '+fmtT(v.raw);}},backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}},
-    scales:{y:{beginAtZero:true,grid:GR,ticks:{callback:function(v){return (Math.round(v*10)/10)+' тн';},color:'#9A9888',font:{size:10}}},x:{grid:{display:false},ticks:TK}}}});
-
-  var cp=0,cf=0;
-  var cumP=planArr.map(function(v){cp+=v;return r0(cp);}), cumF=factArr.map(function(v){cf+=v;return r0(cf);});
-  mc('cPFc',{type:'line',data:{labels:FACT_MK.map(function(k){return ML[k];}),datasets:[
-    {label:'Накопл. план',data:cumP,borderColor:'#A8B8CC',backgroundColor:'#A8B8CC20',borderWidth:2.5,borderDash:[5,4],pointRadius:5,pointBackgroundColor:'#A8B8CC',fill:true,tension:0.2},
-    {label:'Накопл. факт',data:cumF,borderColor:'#7EC8A0',backgroundColor:'#7EC8A018',borderWidth:2.5,pointRadius:5,pointBackgroundColor:'#7EC8A0',fill:true,tension:0.2}
-  ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-    plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},color:'#7a7a6a',boxWidth:10,padding:8}},tooltip:{callbacks:{label:function(v){return v.dataset.label+': '+fmtT(v.raw);}},backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}},
-    scales:{y:{beginAtZero:true,grid:GR,ticks:{callback:function(v){return (Math.round(v*10)/10)+' тн';},color:'#9A9888',font:{size:10}}},x:{grid:{display:false},ticks:TK}}}});
-
-  var avgPlan=FACT_MK.map(function(mk){return r1((P().asset[mk]||0)/DAYS[mk]);});
-  var avgFact=FACT_MK.map(function(mk){return r1(sumFact(mk)/ELAPSED[mk]);});
-  mc('cAvgD',{type:'line',data:{labels:FACT_MK.map(function(k){return ML[k];}),datasets:[
-    {label:'Ср. суточная план (тн/сут)',data:avgPlan,borderColor:'#A8B8CC',backgroundColor:'transparent',borderWidth:2,borderDash:[5,4],pointRadius:5,pointBackgroundColor:'#A8B8CC',tension:0.2},
-    {label:'Ср. суточная факт (тн/сут)',data:avgFact,borderColor:'#7EC8A0',backgroundColor:'#7EC8A012',borderWidth:2.5,pointRadius:6,pointBackgroundColor:'#7EC8A0',fill:true,tension:0.2}
-  ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-    plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},color:'#7a7a6a',boxWidth:10,padding:8}},tooltip:{callbacks:{label:function(v){return v.dataset.label+': '+r1(v.raw)+' тн/сут';}},backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}},
-    scales:{y:{beginAtZero:true,max:CUR==='am'?50:100,grid:GR,ticks:{callback:function(v){return (Math.round(v*10)/10)+' тн/сут';},color:'#9A9888',font:{size:10}}},x:{grid:{display:false},ticks:TK}}}});
-
-  var devArr=FACT_MK.map(function(mk){return r1(sumFact(mk)-(P().asset[mk]||0));});
-  mc('cDev',{type:'bar',data:{labels:FACT_MK.map(function(k){return ML[k];}),datasets:[{label:'Отклонение (тн)',data:devArr,
-    backgroundColor:devArr.map(function(v){return v>=0?'#6EAE8E66':'#C4888866';}),
-    borderColor:devArr.map(function(v){return v>=0?'#6EAE8E':'#A07C8C';}),
-    borderWidth:1.5,borderRadius:5}]},
-    options:{responsive:true,maintainAspectRatio:false,
-      plugins:{legend:{display:false},tooltip:{callbacks:{label:function(v){var val=r1(v.raw);return (val>=0?'+':'')+val+' тн';}},backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}},
-      scales:{y:{grid:GR,ticks:{callback:function(v){var r=Math.round(v*10)/10; return (r>=0?'+':'')+r+' тн';},color:'#9A9888',font:{size:10}}},x:{grid:{display:false},ticks:TK}}}});
-
-  var wrap=document.getElementById('wpf-wrap'); wrap.innerHTML='';
-  var cols=Math.min(WS().length,3);
-  var grid=document.createElement('div');
-  grid.style.cssText='display:grid;grid-template-columns:repeat('+cols+',1fr);gap:14px;margin-bottom:14px';
-  wrap.appendChild(grid);
-
-  WS().forEach(function(w){
-    var clr=CLR()[w], wp=P().wells[w];
-    var wF=r0(wellFactYTD(w)), wP=r0(wellPlanYear(w));
-    var wPct=wP>0?r1(wF/wP*100):0;
-    var pclr=wPct>=100?'#2D7A52':wPct>=90?'#8A6020':'#8A3550';
-    var pbdg=wPct>=100?'b-gr':wPct>=90?'b-am':'b-rs';
-    var card=document.createElement('div'); card.className='card';
-    card.innerHTML='<div class="ct" style="color:'+clr+'">Скв. '+w+'</div>'
-      +'<div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4px">'
-      +'<div><div style="font-size:10px;color:#9A9888;text-transform:uppercase">Факт с нач. года</div><div style="font-size:20px;font-weight:600;color:'+pclr+'">'+wF+' тн</div></div>'
-      +'<div style="text-align:right"><div style="font-size:10px;color:#9A9888;text-transform:uppercase">План на год</div><div style="font-size:16px;font-weight:600;color:#5A52A0">'+wP+' тн</div></div>'
-      +'</div>'
-      
-      +'<div class="chsm"><canvas id="wpf-'+CUR+'-'+w+'"></canvas></div>';
-    grid.appendChild(card);
-  });
-
-  WS().forEach(function(w){
-    var clr=CLR()[w], wp=P().wells[w];
-    var wFA=FACT_MK.map(function(mk){var m=F()[w].monthly.find(function(x){return x.m===mk;});return m?r1(m.oil):0;});
-    var wPA=FACT_MK.map(function(mk){return wp?r1(wp[mk]||0):0;});
-    setTimeout(function(){
-      mc('wpf-'+CUR+'-'+w,{type:'bar',data:{labels:FACT_MK.map(function(k){return ML[k];}),datasets:[
-        {label:'План',data:wPA,backgroundColor:'#A8B8CC25',borderColor:'#A8B8CC',borderWidth:1.5,borderRadius:4},
-        {label:'Факт',data:wFA,backgroundColor:clr+'88',borderColor:clr,borderWidth:1.5,borderRadius:4}
-      ]},options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
-        plugins:{legend:{display:true,position:'bottom',labels:{font:{size:10},color:'#7a7a6a',boxWidth:10,padding:6}},tooltip:{callbacks:{label:function(v){return v.dataset.label+': '+fmtT(v.raw);}},backgroundColor:'#fff',titleColor:'#2E2E28',bodyColor:'#7a7a6a',borderColor:'#DDD8CC',borderWidth:1,padding:10}},
-        scales:{y:{beginAtZero:true,grid:GR,ticks:{callback:function(v){return (Math.round(v*10)/10)+' тн';},color:'#9A9888',font:{size:10}}},x:{grid:{display:false},ticks:TK}}}});
-    },80);
+    content.appendChild(panel);
   });
 }
 
-// ЗАПУСК
-AW=WS()[0];
-renderHero();
-renderSum();
+function switchPrincipal(p) {
+  document.querySelectorAll('.tab-l1').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.principal-panel').forEach(pn => pn.classList.remove('active'));
+  [...document.getElementById('tabsL1').children].forEach(t => {
+    if (t.textContent === p) t.classList.add('active');
+  });
+  document.getElementById('principal-' + p).classList.add('active');
+}
+
+function switchBank(p, view, el) {
+  const panel = document.getElementById('principal-' + p);
+  panel.querySelectorAll('.tab-l2').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  const bankContent = document.getElementById('bankContent-' + p);
+  bankContent.innerHTML = view === 'Свод' ? renderSvodPanel(p) : renderBankPanel(p, view);
+}
+
+build();
+
+const now = new Date();
+const dateStr = now.toLocaleDateString('ru-RU', { day: '2-digit', month: '2-digit', year: 'numeric' });
+document.getElementById('currentDate').textContent = dateStr;
+document.getElementById('footerDate').textContent = dateStr;
 </script>
 </body>
 </html>
